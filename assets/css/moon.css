@@ -1,0 +1,151 @@
+body {
+     background: pink; 
+    box-sizing: border-box;
+    margin: 0;
+    width: 100vw;
+    /*font-family: Georgia, serif;*/
+    /*font-family: Comic Sans MS, cursive;*/
+    /*font-family: Lucida Handwriting, cursive;*/
+    /*font-family: cursive;*/
+    /*Serif*/
+    /*font-family: Garamond, sans-serif;*/
+    /*font-family: Brush Script MT, cursive;*/
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.logo {
+    display: block;
+    width: 20%;
+    margin: 30px auto;
+}
+
+.mainC {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*padding: 10px;*/
+}
+
+.input-box {
+    margin: 10px 0;
+    display: flex;
+    width: 80%;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.input-box input {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.input-box > input:hover {
+    glow
+}
+
+.slidecontainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.slider {
+    width: 80%;
+    height: 30px;
+}
+
+.res {
+ margin: 30px 0px;
+}
+
+.res > p {
+    font-size: 50px;
+    margin: 20px 0px;
+}
+
+.res > p:nth-child(2),
+.res > p:nth-child(3) {
+    text-align: center;
+}
+
+.btn-copy {
+    width: 260px;
+    height: 60px;
+    background: green;
+    border-radius: 30px;
+    opacity: .5;
+    transition: .3s;
+
+    font-size: 30px;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.btn-copy:hover {
+    opacity: 1;
+}
+
+.inputC {
+    /*background: blue;*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn_AMnumber {
+    height: 90%;
+    width: 10%;
+    background: yellow;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .6em;
+    border-radius: 10px;
+    border: solid;
+    border-width: .6px;
+}
+
+.btn_AMnumber:hover {
+    background: #82e982;
+}
+
+.btn_AMnumber__slu {
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+#toMoon {
+    width: 30px;
+    height: 30px;
+    background: url('../img/home.png');
+    background-position: center;
+    background-size: contain;
+    opacity: .6;
+    cursor: pointer;
+}
+
+#toMoon:hover {
+    opacity: 1;
+}

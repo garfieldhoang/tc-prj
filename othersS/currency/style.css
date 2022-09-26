@@ -1,0 +1,123 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#frame1 {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background: pink;
+}
+
+.logo {
+	height: 14%;
+	width: 30%;
+	/*background: black;*/
+	margin: auto;
+	position: absolute;
+	top: 0;
+
+	background-image: url('./img/smile.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.mainContainer {
+	/*background: blue;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 96%;
+	height: 90%;
+	margin: auto;
+
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#crc {
+	width: 50%;
+	height: 80px;
+	border: solid;
+	border-radius: 20px;
+	font-weight: bolder;
+	text-align: center;
+    margin-bottom: 40px;
+}
+
+#crc > option {
+	font-size: 30px;
+	text-align: center;
+}
+
+.input-box {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.input-box > input {
+    width: 78%;
+    height: 100px;
+    border-radius: 20px;
+    font-size: 40px;
+    margin: 20px 0;
+    transition: .3s;
+}
+
+.input-box > input:hover {
+    border: solid;
+    border-width: 5px;
+}
+
+.signFlag {
+	background: yellow;
+	width: 20%;
+	height: 100px;
+	border-radius: 20px;
+}
+
+.signFlag_vn {
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/800px-Flag_of_Vietnam.svg.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.signFlag_ru {
+	background: url('https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.input-box_res input {
+    text-align: center;
+}
+
+#home {
+    width: 100px;
+    height: 100px;
+    background: url('../../assets/img/home.png');
+    background-position: center;
+    background-size: contain;
+    opacity: .6;
+    cursor: pointer;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#home:hover {
+    opacity: 1;
+}

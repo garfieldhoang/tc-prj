@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Currency</title>
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+	<div id=frame1>
+		<div class="mainContainer">
+			<div class="logo"></div>
+			<select id="crc" name="crc" style="font-size: 50px;">
+			    <option value="op1VNRU">VN - RU</option>
+			    <option value="op2RUVN">RU - VN</option>
+		  	</select>
+			
+			<div class="input-box">
+			  	<div class="signFlag signFlag_vn"></div>
+			  	<input type="number" placeholder="Buy U" id="buyU" value="23000">
+			</div>
+			<div class="input-box">
+			  	<div class="signFlag signFlag_ru"></div>
+			  	<input type="number" placeholder="Sell U" id="sellU" value="50">
+			</div>
+
+			<br><br><br><br><br>
+
+			<div class="input-box input-box_res">
+			  	<input type="number" placeholder="VND" id="VND">
+			  	<div class="signFlag signFlag_vn"></div>
+			</div>
+			<div class="input-box input-box_res">
+			  	<input type="number" placeholder="RUB" id="RUB">
+			  	<div class="signFlag signFlag_ru"></div>
+			</div>
+		</div>
+	</div>
+	<a href="../../index.html" id="home"></a>
+</body>
+<script type="text/javascript" src="./sc.js"></script>
+</html>

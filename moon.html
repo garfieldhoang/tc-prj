@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/hmm.png" type="image/x-icon" />
+    <title>[MOON] TC PRJ</title>
+</head>
+<link rel="stylesheet" href="./assets/css/moon.css">
+<body>
+<!-- <div class="logo"> -->
+    <img class="logo" src="./assets/img/hmm.png">
+<!-- </div> -->
+
+<div class="mainC">        
+    <div class="input-box input-box__sl">
+        <span class="details">SL %</span>
+        <!-- <br> -->
+        <div class="inputC">
+            <div id="sl_m01" class="btn_AMnumber">-0.1</div>
+            <div id="sl_m001" class="btn_AMnumber">-0.01</div>
+            <input type="text" placeholder="SL % here">
+            <div id="sl_p001" class="btn_AMnumber">+0.01</div>
+            <div id="sl_p01" class="btn_AMnumber">+0.1</div>
+            
+        </div>
+    </div>    
+
+    <div class="input-box input-box__u">
+        <span class="details">SL U</span>
+        <!-- <br> -->
+        <div class="inputC">
+            <div id="slu_m5" class="btn_AMnumber btn_AMnumber__slu">-5</div>
+            <div id="slu_m1" class="btn_AMnumber btn_AMnumber__slu">-1</div>
+            <input type="text" placeholder="SL U here" value="70">
+            <div id="slu_p1" class="btn_AMnumber btn_AMnumber__slu">+1</div>
+            <div id="slu_p5" class="btn_AMnumber btn_AMnumber__slu">+5</div>
+        </div>
+    </div>    
+
+    <!--  -->
+    <!-- begin: hidden -->
+    <!--  -->
+    <div class="input-box input-box__lev" style="display: none;">
+        <span class="details">Lev x</span>
+        <!-- <br> -->
+        <input type="text" placeholder="Lev X here">
+    </div>    
+    <div class="">
+        <div></div>
+    </div>
+    <div class="slidecontainer" style="display: none;">
+        <span class="details">Lev: 
+            <span id="levVal"></span>x
+        </span>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+    <!--  -->
+    <!-- end: hidden -->
+    <!--  -->
+
+    <div class="res">
+        <p style="text-align: center; font-size: 2em; font-weight: bolder;">Lev & Amount:</p>
+        <p><span id="js-res"></span>X</p>
+        <p><span id="js-res--big"></span>U</p>
+
+        <div class="btn-copy" onclick="btnCopy()">
+            COPY
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <a href="./index.html" id="toMoon"></a>
+</div>
+
+</body>
+<script src="./assets/js/moon.js"></script>
+</html>
