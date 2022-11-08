@@ -14,31 +14,27 @@
 <!-- </div> -->
 
 <div class="mainC">        
-    <div class="input-box input-box__sl">
-        <span class="details">SL %</span>
-        <!-- <br> -->
-        <input type="text" placeholder="SL % here">
-    </div>    
+    <div class="left-col col">
+        <div class="input-box input-box__sl">
+            <span class="details">SL %</span>
+            <!-- <br> -->
+            <input type="text" placeholder="SL % here">
+        </div>    
 
-    <div class="input-box input-box__u">
-        <span class="details">SL U</span>
-        <!-- <br> -->
-        <input type="text" placeholder="SL U here" value="70">
-    </div>    
+        <div class="input-box input-box__u">
+            <span class="details">SL U</span>
+            <!-- <br> -->
+            <input type="text" placeholder="SL U here" value="70">
+        </div>    
 
-    <div class="input-box input-box__lev">
-        <span class="details">Lev x</span>
-        <!-- <br> -->
-        <input type="text" placeholder="Lev X here">
-    </div>    
-    <div class="slidecontainer">
-        <span class="details">Lev: 
-            <span id="levVal"></span>x
-        </span>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div class="input-box input-box__lev">
+            <span class="details">Lev x</span>
+            <!-- <br> -->
+            <input type="text" placeholder="Lev X here">
+        </div>
     </div>
-
-    <div class="res">
+    <div class="right-col col">
+        <div class="res">
         <p style="text-align: center;">AMOUNT:</p>
         <p><span id="js-res"></span>U</p>
         <p><span id="js-res--big"></span>U</p>
@@ -47,6 +43,16 @@
             COPY
         </div>
     </div>
+    </div>
+        
+    <div class="slidecontainer">
+        <span class="details">Lev: 
+            <span id="levVal"></span>x
+        </span>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    
     <br>
     <br>
     <br>
