@@ -28,28 +28,28 @@ function main() {
 }
 
 S1.oninput = function() {
-    S1val = Math.floor(this.value)
+    S1val = Number(this.value)
     
-    S2val = Math.floor(this.value)
+    S2val = Number(this.value)
     S2.value = this.value
     console.log(S1val)
     main()
 }
 
 S2.oninput = function() {
-    S2val = Math.floor(this.value)
+    S2val = Number(this.value)
     console.log(S2val)
     main()
 }
 
 G1.oninput = function() {
-    G1val = Math.floor(this.value)
+    G1val = Number(this.value)
     console.log(G1val)
     main()
 }
 
 G2.oninput = function() {
-    G2val = Math.floor(this.value)
+    G2val = Number(this.value)
     console.log(G2val)
     main()
 }
