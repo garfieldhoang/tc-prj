@@ -2,6 +2,8 @@ var S1 = document.querySelector('#S1')
 var S2 = document.querySelector('#S2')
 var G1 = document.querySelector('#G1')
 var G2 = document.querySelector('#G2')
+
+// var resultH2 = document.querySelector('#result > h2')
 var resultH1 = document.querySelector('#result > h1')
 
 var S1val, S2val, G1val, G2val, res
@@ -22,8 +24,10 @@ function main() {
     console.log(`Res: ${res}`)
     if (res === undefined || Number.isNaN(res) === true) {
         resultH1.innerHTML = "------"
+        // resultH2.innerHTML = "------"
     } else {
-        resultH1.innerHTML = res
+        resultH1.innerHTML = Math.round((res + G2val)*10000)/10000
+        // resultH2.innerHTML = res
     }
 }
 
