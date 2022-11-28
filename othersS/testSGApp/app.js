@@ -12,11 +12,9 @@ function main() {
 	if (S1val === S2val) {
         res = (G1val + G2val) / 2
         // res = Math.round(((G1val + G2val) / 2)*10000)/10000
-	} else if (S1val < S2val) {
+	} else {
         //  ABS(G1 - G2) / (S1 + S2) * S1
-        res = Math.abs(G1val - G2val) / (S1val + S2val) * S1val
-    } else {
-        res = Math.abs(G1val - G2val) / (S1val + S2val) * S2val
+        res = Math.abs(G1val - G2val) / (S1val + S2val) * S1val + G2val
     }
 	
     res = Math.round(res*10000)/10000
@@ -26,7 +24,7 @@ function main() {
         resultH1.innerHTML = "------"
         // resultH2.innerHTML = "------"
     } else {
-        resultH1.innerHTML = Math.round((res + G2val)*10000)/10000
+        resultH1.innerHTML = res
         // resultH2.innerHTML = res
     }
 }
