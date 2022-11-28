@@ -42,3 +42,16 @@ html {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.col {
+    width: 50%;
+    float: left;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+}

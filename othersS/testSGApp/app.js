@@ -8,22 +8,29 @@ var S1val, S2val, G1val, G2val, res
 
 function main() {
 	if (S1val === S2val) {
-        // res = (G1val + G2val) / 2
-		// console.log(`
-  //           This is G1: ${G1val}
-  //           This is G2: ${G2val}
-  //           ${G1val + G2val}
-  //           `)
         res = (G1val + G2val) / 2
         // res = Math.round(((G1val + G2val) / 2)*10000)/10000
-	}
+	} else if (S1val < S2val) {
+        //  ABS(G1 - G2) / (S1 + S2) * S1
+        res = Math.abs(G1val - G2val) / (S1val + S2val) * S1val
+    } else {
+        res = Math.abs(G1val - G2val) / (S1val + S2val) * S2val
+    }
 	
+    res = Math.round(res*10000)/10000
+
     console.log(`Res: ${res}`)
-    resultH1.innerHTML = res
+    if (res === undefined || Number.isNaN(res) === true) {
+        resultH1.innerHTML = "------"
+    } else {
+        resultH1.innerHTML = res
+    }
 }
 
 S1.oninput = function() {
     S1val = Math.floor(this.value)
+    
+    S2val = Math.floor(this.value)
     S2.value = this.value
     console.log(S1val)
     main()
