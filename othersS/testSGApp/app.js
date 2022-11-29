@@ -9,13 +9,31 @@ var resultH1 = document.querySelector('#result > h1')
 var S1val, S2val, G1val, G2val, res
 
 function main() {
-	if (S1val === S2val) {
-        res = (G1val + G2val) / 2
-        // res = Math.round(((G1val + G2val) / 2)*10000)/10000
-	} else {
-        //  ABS(G1 - G2) / (S1 + S2) * S1
-        res = Math.abs(G1val - G2val) / (S1val + S2val) * S1val + G2val
+    // L
+    if (G1val > G2val) {
+    	if (S1val === S2val) {
+            res = (G1val + G2val) / 2
+            // res = Math.round(((G1val + G2val) / 2)*10000)/10000
+    	} else {
+            //  ABS(G1 - G2) / (S1 + S2) * S1
+            res = Math.abs(G1val - G2val) / (S1val + S2val) * S1val + G2val
+        }
+
+    } else if (G1val < G2val) {
+        if (S1val === S2val) {
+            res = (G1val + G2val) / 2
+            // res = Math.round(((G1val + G2val) / 2)*10000)/10000
+        } else {
+            //  ABS(G1 - G2) / (S1 + S2) * S1
+            res = G2val - Math.abs(G1val - G2val) / (S1val + S2val) * S1val
+        }
+
+    } else {
+        res = undefined
     }
+    
+
+    // S
 	
     res = Math.round(res*10000)/10000
 
