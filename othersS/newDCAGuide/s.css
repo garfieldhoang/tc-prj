@@ -1,0 +1,66 @@
+html {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: pink;
+    width: 100%;
+    position: relative;
+}
+
+.margin-top-bot {
+    margin: 10px 0;
+}
+
+.textSize_px {
+    font-size: 24px;
+    text-align: center;
+}
+
+#main {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.col {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 33.33%;
+}
+
+input {
+    width: 7.6rem;
+    text-align: center;
+    /*height: 50px;*/
+    border-radius: 10px;
+    font-size: 30px;
+}
