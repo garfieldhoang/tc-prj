@@ -31,11 +31,26 @@ body {
     position: relative;
 }
 
+.logo {
+    height: 100px;
+    aspect-ratio: 1;
+    /*background-image: url("hmm.png");*/
+    background-image: url('../../assets/img/hmm.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /*background-image: url("./hmm.png");*/
+    /*background-color: red;*/
+}
+
+/*file:///C:/Users/Hoang.H/Downloads/%23testApps/tc-prj/othersS/newDCAGuide/assets/img/hmm.png*/
+
 .row {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .col {
@@ -57,10 +72,31 @@ body {
     width: 33.33%;
 }
 
+.col-4 {
+    width: 25%;
+}
+
 input {
-    width: 7.6rem;
+    width: 8.6rem;
     text-align: center;
     /*height: 50px;*/
     border-radius: 10px;
     font-size: 30px;
+}
+
+.noteInput {
+    margin: 30px 0;
+    height: 100px;
+}
+
+@media (max-width: 800px) {
+    input {
+        width: 80%;
+    }
+}
+
+.btn {
+    height: 50px;
+    background-color: red;
+    border: 1px solid black;
 }
