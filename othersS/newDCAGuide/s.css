@@ -13,6 +13,8 @@ body {
     position: relative;
 }
 
+/*Global*/
+
 .margin-top-bot {
     margin: 10px 0;
 }
@@ -22,6 +24,12 @@ body {
     text-align: center;
 }
 
+.dp_none {
+    display: none !important;
+}
+
+
+/*Local*/
 #main {
     margin: 20px 0;
     display: flex;
@@ -41,6 +49,15 @@ body {
 
     /*background-image: url("./hmm.png");*/
     /*background-color: red;*/
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo:active {
+    /*transition: .2s;*/
+    transform: rotate(180deg);
 }
 
 /*file:///C:/Users/Hoang.H/Downloads/%23testApps/tc-prj/othersS/newDCAGuide/assets/img/hmm.png*/
@@ -97,6 +114,53 @@ input {
 
 .btn {
     height: 50px;
-    background-color: red;
-    border: 1px solid black;
+    aspect-ratio:  1;
+    /*background-color: red;*/
+    /*border: 1px solid black;*/
+
+    background-image: url('./img/up_btn.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    opacity: .5;
+}
+
+.btn:hover {
+    opacity: 1;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn:active {
+    height: 46px;
+    transition: 0s;
+}
+
+.btn_1_1 {
+    
+}
+
+.btn_1_2 {
+    transform: rotate(180deg);
+}
+
+.btn_1_3 {
+
+}
+
+.btn_1_4 {
+    transform: rotate(180deg);
+}
+
+
+.btns {
+
+    justify-content: space-evenly;
+    margin-top: 20px;
+
+    /*width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;*/
 }

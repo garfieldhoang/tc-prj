@@ -1,3 +1,10 @@
+/// # glb fx # ///
+///
+
+function cl(x) {
+    console.log(x)
+}
+
 /// # VARS ///
 ///
 
@@ -27,10 +34,52 @@ var result_newEntry = document.getElementById('result_newEntry')
 
 var Entry_1Val, Entry_2Val, result_newEntryVal
 
+var btns = document.querySelectorAll('.btn')
+var btnsClass = document.querySelectorAll('.btns')
+var logo = document.querySelector('.logo')
+
 
 /// ###############
 /// # FUNCTIONS ///
 ///
+
+/// ## btns ## ///
+
+logo.addEventListener("click", function() {
+    if (!btnsClass[0].classList.contains('dp_none')
+        || !btnsClass[1].classList.contains('dp_none')) {
+        btnsClass[0].classList.add('dp_none')
+        btnsClass[1].classList.add('dp_none')
+    } else {
+        btnsClass[0].classList.remove('dp_none')
+        btnsClass[1].classList.remove('dp_none')        
+    }
+});
+
+// SLu_1
+btns[0].addEventListener("click", () => btnReCalc(1, 'SLu_1'))
+btns[1].addEventListener("click", () => btnReCalc(-1, 'SLu_1'))
+btns[4].addEventListener("click", () => btnReCalc(5, 'SLu_1'))
+btns[5].addEventListener("click", () => btnReCalc(-5, 'SLu_1'))
+
+// SLu_2
+btns[2].addEventListener("click", () => btnReCalc(1, 'SLu_2'))
+btns[3].addEventListener("click", () => btnReCalc(-1, 'SLu_2'))
+btns[6].addEventListener("click", () => btnReCalc(5, 'SLu_2'))
+btns[7].addEventListener("click", () => btnReCalc(-5, 'SLu_2'))
+
+function btnReCalc(x, y) {
+    eval(`${y}.value = Number(${y}.value) + Number(x)`)
+    eval(`${y}Val = ${y}.value`)
+    eval(`cl(${y}Val)`)
+    main()
+}
+
+function minus(x, y) {
+    main()
+}
+
+/// ## MAIN ## ///
 
 function mR(num) {
     num = Math.round(num*1000)/1000
