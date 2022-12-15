@@ -39,6 +39,10 @@ var btnsClass = document.querySelectorAll('.btns')
 var logo = document.querySelector('.logo')
 
 
+// Default Values
+LEV.value = LEVVal = 20
+
+
 /// ###############
 /// # FUNCTIONS ///
 ///
@@ -46,13 +50,14 @@ var logo = document.querySelector('.logo')
 /// ## btns ## ///
 
 logo.addEventListener("click", function() {
-    if (!btnsClass[0].classList.contains('dp_none')
-        || !btnsClass[1].classList.contains('dp_none')) {
+    if (!btnsClass[0].classList.contains('dp_none')) {
         btnsClass[0].classList.add('dp_none')
         btnsClass[1].classList.add('dp_none')
+        btnsClass[2].classList.add('dp_none')
     } else {
         btnsClass[0].classList.remove('dp_none')
         btnsClass[1].classList.remove('dp_none')        
+        btnsClass[2].classList.remove('dp_none')
     }
 });
 
@@ -61,21 +66,20 @@ btns[0].addEventListener("click", () => btnReCalc(1, 'SLu_1'))
 btns[1].addEventListener("click", () => btnReCalc(-1, 'SLu_1'))
 btns[4].addEventListener("click", () => btnReCalc(5, 'SLu_1'))
 btns[5].addEventListener("click", () => btnReCalc(-5, 'SLu_1'))
+btns[8].addEventListener("click", () => btnReCalc(10, 'SLu_1'))
+btns[9].addEventListener("click", () => btnReCalc(-10, 'SLu_1'))
 
 // SLu_2
 btns[2].addEventListener("click", () => btnReCalc(1, 'SLu_2'))
 btns[3].addEventListener("click", () => btnReCalc(-1, 'SLu_2'))
 btns[6].addEventListener("click", () => btnReCalc(5, 'SLu_2'))
 btns[7].addEventListener("click", () => btnReCalc(-5, 'SLu_2'))
+btns[10].addEventListener("click", () => btnReCalc(10, 'SLu_2'))
+btns[11].addEventListener("click", () => btnReCalc(-10, 'SLu_2'))
 
 function btnReCalc(x, y) {
     eval(`${y}.value = Number(${y}.value) + Number(x)`)
     eval(`${y}Val = ${y}.value`)
-    eval(`cl(${y}Val)`)
-    main()
-}
-
-function minus(x, y) {
     main()
 }
 
