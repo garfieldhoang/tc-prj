@@ -30,9 +30,11 @@ var LEVVal, result_RVal, result_RSVal, Vol_1Val, Vol_2Val, SLu_1Val, SLu_2Val
 
 var Entry_1 = document.getElementById('Entry_1')
 var Entry_2 = document.getElementById('Entry_2')
+var SL = document.getElementById('SL')
+var result_rate0_1 = document.getElementById('result_rate0_1')
 var result_newEntry = document.getElementById('result_newEntry')
 
-var Entry_1Val, Entry_2Val, result_newEntryVal
+var Entry_1Val, Entry_2Val, SLVal, result_newEntryVal, result_rate0_1Val
 
 var btns = document.querySelectorAll('.btn')
 var btnsClass = document.querySelectorAll('.btns')
@@ -85,12 +87,16 @@ function btnReCalc(x, y) {
 
 /// ## MAIN ## ///
 
+function percentCalc(a, b) {
+    return Math.abs((b - a)/a*100)
+}
+
 function mR(num) {
     num = Math.round(num*1000)/1000
     return num
 }
 
-function main() {
+function main(x) {
     result_R.innerText = `${mR(SLP_1Val/SLP_2Val)}`
     result_RS.innerText = `${mR((SLP_1Val/SLP_2Val)*(SLu_2Val/SLu_1Val))}`
 
@@ -108,12 +114,26 @@ function main() {
     // 2+(1-2)/(1+(v2/v1))
     result_newEntryVal = Entry_2Val+(Entry_1Val-Entry_2Val)/(1+(Vol_2Val/Vol_1Val))
     result_newEntry.innerText = `${mR(result_newEntryVal)}`
+
+    result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
+    result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
+
+    // cl(percentCalc(Entry_1Val, SLVal))
+    if (x === 'Entry_1Val') {
+        SLP_1.value = percentCalc(Entry_1Val, SLVal)
+    } else if (x === 'Entry_2Val') {
+        SLP_2.value = percentCalc(Entry_2Val, SLVal)
+    } else if (x === 'SLVal') {
+        SLP_1.value = percentCalc(Entry_1Val, SLVal)
+        SLP_2.value = percentCalc(Entry_2Val, SLVal)
+    }
+
 }
 
 function beMain(x, y) {
     x.oninput = function() {
         eval(`${y} = Number(this.value)`)
-        main()
+        main(y)
     }
 }
 
@@ -129,3 +149,4 @@ beMain(SLu_2, 'SLu_2Val')
 
 beMain(Entry_1, 'Entry_1Val')
 beMain(Entry_2, 'Entry_2Val')
+beMain(SL, 'SLVal')
