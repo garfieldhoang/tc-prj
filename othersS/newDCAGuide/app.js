@@ -16,6 +16,8 @@ var Vol_1_ori = document.getElementById('Vol_1_ori')
 var Vol_2_ori = document.getElementById('Vol_2_ori')
 var result_R = document.getElementById('result_R')
 var result_RS = document.getElementById('result_RS')
+
+var result_sumVolOri = document.getElementById('result_sumVolOri')
 var result_sumVol = document.getElementById('result_sumVol')
 
 var Vol_1 = document.getElementById('Vol_1')
@@ -116,6 +118,7 @@ function main(x) {
     Vol_1_ori.innerText = `${mR(Vol_1Val/LEVVal)}`
     Vol_2_ori.innerText = `${mR(Vol_2Val/LEVVal)}`
 
+    result_sumVolOri.innerText = `${mR((Vol_1Val+Vol_2Val)/LEVVal)}`
     result_sumVol.innerText = `${mR(Vol_1Val+Vol_2Val)}`
 
     // 2+(1-2)/(1+(v2/v1))
