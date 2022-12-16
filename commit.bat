@@ -4,7 +4,7 @@ title commitScript
 
 git status
 git add .
-git commit -m "upd_221216_SLs_%"
+git commit -m "upd_221216_TABS"
 git push origin main
 
 
