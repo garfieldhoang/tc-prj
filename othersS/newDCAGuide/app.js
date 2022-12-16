@@ -96,6 +96,13 @@ function mR(num) {
     return num
 }
 
+function mRs(num, i) {
+    i = Math.pow(10, i)
+
+    num = Math.round(num*i)/i
+    return num   
+}
+
 function main(x) {
     result_R.innerText = `${mR(SLP_1Val/SLP_2Val)}`
     result_RS.innerText = `${mR((SLP_1Val/SLP_2Val)*(SLu_2Val/SLu_1Val))}`
@@ -120,14 +127,13 @@ function main(x) {
 
     // cl(percentCalc(Entry_1Val, SLVal))
     if (x === 'Entry_1Val') {
-        SLP_1.value = percentCalc(Entry_1Val, SLVal)
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
     } else if (x === 'Entry_2Val') {
-        SLP_2.value = percentCalc(Entry_2Val, SLVal)
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
     } else if (x === 'SLVal') {
-        SLP_1.value = percentCalc(Entry_1Val, SLVal)
-        SLP_2.value = percentCalc(Entry_2Val, SLVal)
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
     }
-
 }
 
 function beMain(x, y) {
