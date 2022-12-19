@@ -14,3 +14,5 @@ pause
 cd C:\Users\Hoang.H\Downloads\#testApps\tc-prj
 
 # Select fr line #9-up
+
+# git pull origin branch
