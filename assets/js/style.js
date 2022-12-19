@@ -15,6 +15,31 @@ var footer_sl = document.getElementById('footer_sl')
 
 var footer_entryVal, footer_slVal
 
+var logo = document.querySelector('.logo')
+
+var btns_upAndDown_area = document.querySelectorAll('.btns_upAndDown_area')
+
+var btn_uad_01 = document.getElementById('btn_uad_01')
+var btn_uad_02 = document.getElementById('btn_uad_02')
+var btn_uad_03 = document.getElementById('btn_uad_03')
+var btn_uad_04 = document.getElementById('btn_uad_04')
+var btn_uad_05 = document.getElementById('btn_uad_05')
+var btn_uad_06 = document.getElementById('btn_uad_06')
+
+// btns
+btn_uad_01.addEventListener("click", () => btnReCalc(1, 'slu'))
+btn_uad_02.addEventListener("click", () => btnReCalc(5, 'slu'))
+btn_uad_03.addEventListener("click", () => btnReCalc(10, 'slu'))
+
+btn_uad_04.addEventListener("click", () => btnReCalc(-1, 'slu'))
+btn_uad_05.addEventListener("click", () => btnReCalc(-5, 'slu'))
+btn_uad_06.addEventListener("click", () => btnReCalc(-10, 'slu'))
+
+function btnReCalc(x, y) {
+    eval(`${y}.value = Number(${y}.value) + Number(x)`)
+    eval(`${y}Val = ${y}.value`)
+    main('btn_uad')
+}
 
 // ###
 function cl(x) {
@@ -23,8 +48,9 @@ function cl(x) {
 
 // order: 3-3-2-1
 
-levXinput.value = output.innerHTML = 50;
-slu.value = sluVal = 70;
+sl.value = slVal = 1
+levXinputVal = levXinput.value = output.innerHTML = 20;
+slu.value = sluVal = 40;
 
 
 // PART - 1
@@ -75,6 +101,8 @@ function main(x) {
     if (x === 'footer_entry' || x === 'footer_sl') {
         slVal = sl.value = prcCalc(footer_entryVal, footer_slVal)
         part = 3
+    } else if (x === 'btn_uad') {
+        part = 3
     }
 
     switch (part) {
@@ -113,3 +141,23 @@ function btnCopy() {
     console.log(fResVal);
     navigator.clipboard.writeText(fResVal*slider.value);
 };
+
+function addDpNone(x) {
+    if (x.classList.contains('dp_none')) {
+        x.classList.remove('dp_none')
+    } else {
+        x.classList.add('dp_none')
+    }
+}
+
+var bnt_esl = document.querySelector('.btn-esl')
+
+bnt_esl.addEventListener("click", function() {
+    addDpNone(footer_entry)
+    addDpNone(footer_sl)
+})
+
+logo.addEventListener("click", function() {
+    addDpNone(btns_upAndDown_area[0])
+    addDpNone(btns_upAndDown_area[1])
+})

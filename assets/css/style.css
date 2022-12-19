@@ -14,6 +14,14 @@ body {
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
+.dp_none {
+    display: none !important;
+}
+
+.rotate_180 {
+    transform: rotate(180deg);
+}
+
 .logo {
     display: block;
     width: 20%;
@@ -107,6 +115,7 @@ body {
     text-align: center;
 }
 
+.btn-esl,
 .btn-copy {
     width: 160px;
     height: 60px;
@@ -181,4 +190,33 @@ body {
     font-size: 40px;
     text-align: center;
     margin: 10px 0;
+}
+
+.btns_upAndDown_area {
+    height: 100px;
+    width: 100%;
+    /*background-color: red;*/
+    float: left;
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn_uad {
+    height: 80%;
+    aspect-ratio: 1;
+    background: url('../img/up_btn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .6;
+    transition: .3s;
+}
+
+.btn_uad:hover,
+.btn_uad:active {
+    opacity: 1;
+    height: 72%;
 }
