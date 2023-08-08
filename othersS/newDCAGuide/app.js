@@ -27,7 +27,7 @@ var SLu_1 = document.getElementById('SLu_1')
 var SLu_2 = document.getElementById('SLu_2')
 
 var SLP_1Val = 0, SLP_2Val = 0
-var LEVVal, result_RVal, result_RSVal, Vol_1Val, Vol_2Val, SLu_1Val, SLu_2Val
+var LEVVal, result_RVal, result_RSVal, rrNewVal, Vol_1Val, Vol_2Val, SLu_1Val, SLu_2Val
 
 
 var Entry_1 = document.getElementById('Entry_1')
@@ -36,6 +36,7 @@ var SL = document.getElementById('SL')
 var TP = document.getElementById('TP')
 var result_rate0_1 = document.getElementById('result_rate0_1')
 var result_newEntry = document.getElementById('result_newEntry')
+var rrNew = document.getElementById('rrNew')
 
 var Entry_1Val, Entry_2Val, SLVal, result_newEntryVal, result_rate0_1Val
 
@@ -132,6 +133,11 @@ function mR(num) {
     return num
 }
 
+function mR2(num) {
+    num = Math.round(num*100)/100
+    return num
+}
+
 function mRs(num, i) {
     i = Math.pow(10, i)
 
@@ -217,5 +223,8 @@ const reCalc = () => {
 
     result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
     result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
+
+    rrNewVal = Math.abs(TP.value - result_newEntryVal)/Math.abs(result_newEntryVal - SLVal)
+    rrNew.innerText = `${mR2(rrNewVal)}`
 }
 
