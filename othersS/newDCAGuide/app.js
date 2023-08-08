@@ -46,6 +46,8 @@ var logo = document.querySelector('.logo')
 var reCalcBtn = document.querySelector('.fxBtnsCont_btn_1')
 var cpyBtn = document.querySelector('.fxBtnsCont_btn_2')
 
+var cpyBtn_inputBox3class = document.querySelectorAll('.cpyBtn_inputBox3class')
+
 
 // Default Values
 LEV.value = LEVVal = 20
@@ -71,6 +73,12 @@ cpyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(`${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${TP.value} ${SLu_1Val + SLu_2Val}U ${mR(result_newEntryVal)}`)
     
 })
+
+cpyBtn_inputBox3class[0].addEventListener("click", () => navigator.clipboard.writeText(mR(Entry_1Val)))
+cpyBtn_inputBox3class[1].addEventListener("click", () => navigator.clipboard.writeText(mR(Entry_2Val)))
+cpyBtn_inputBox3class[2].addEventListener("click", () => navigator.clipboard.writeText(mR(SLVal)))
+cpyBtn_inputBox3class[3].addEventListener("click", () => navigator.clipboard.writeText(mR(TP.value)))
+
 
 // main
 
