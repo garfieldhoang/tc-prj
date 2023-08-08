@@ -58,10 +58,15 @@ logo.addEventListener("click", function() {
         btnsClass[0].classList.add('dp_none')
         btnsClass[1].classList.add('dp_none')
         btnsClass[2].classList.add('dp_none')
+        btnsClass[3].classList.add('dp_none')
+        btnsClass[4].classList.add('dp_none')
     } else {
         btnsClass[0].classList.remove('dp_none')
         btnsClass[1].classList.remove('dp_none')        
         btnsClass[2].classList.remove('dp_none')
+        btnsClass[3].classList.remove('dp_none')
+        btnsClass[4].classList.remove('dp_none')
+
     }
 });
 
