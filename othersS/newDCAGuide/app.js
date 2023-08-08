@@ -42,6 +42,9 @@ var btns = document.querySelectorAll('.btn')
 var btnsClass = document.querySelectorAll('.btns')
 var logo = document.querySelector('.logo')
 
+var reCalcBtn = document.querySelector('.fxBtnsCont_btn_1')
+var cpyBtn = document.querySelector('.fxBtnsCont_btn_2')
+
 
 // Default Values
 LEV.value = LEVVal = 20
@@ -111,6 +114,62 @@ function mRs(num, i) {
 }
 
 function main(x) {
+    // result_R.innerText = `${mR(SLP_1Val/SLP_2Val)}`
+    // result_RS.innerText = `${mR((SLP_1Val/SLP_2Val)*(SLu_2Val/SLu_1Val))}`
+
+    // Vol_1Val = SLu_1Val/(SLP_1Val/100)
+    // Vol_2Val = SLu_2Val/(SLP_2Val/100)
+
+    // Vol_1.innerText = `${mR(Vol_1Val)}`
+    // Vol_2.innerText = `${mR(Vol_2Val)}`
+    // // Vol_2Val
+    // Vol_1_ori.innerText = `${mR(Vol_1Val/LEVVal)}`
+    // Vol_2_ori.innerText = `${mR(Vol_2Val/LEVVal)}`
+
+    // result_sumVolOri.innerText = `${mR((Vol_1Val+Vol_2Val)/LEVVal)}`
+    // result_sumVol.innerText = `${mR(Vol_1Val+Vol_2Val)}`
+
+    // // 2+(1-2)/(1+(v2/v1))
+    // result_newEntryVal = Entry_2Val+(Entry_1Val-Entry_2Val)/(1+(Vol_2Val/Vol_1Val))
+    // result_newEntry.innerText = `${mR(result_newEntryVal)}`
+
+    // result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
+    // result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
+
+    reCalc()
+    
+    // cl(percentCalc(Entry_1Val, SLVal))
+    if (x === 'Entry_1Val') {
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
+    } else if (x === 'Entry_2Val') {
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
+    } else if (x === 'SLVal') {
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
+    }
+}
+
+function beMain(x, y) {
+    x.oninput = function() {
+        eval(`${y} = Number(this.value)`)
+        main(y)
+    }
+}
+
+/// BEGIN ///
+///
+
+beMain(SLP_1, 'SLP_1Val')
+beMain(SLP_2, 'SLP_2Val')
+beMain(LEV, 'LEVVal')
+beMain(SLu_1, 'SLu_1Val')
+beMain(SLu_2, 'SLu_2Val')
+
+beMain(Entry_1, 'Entry_1Val')
+beMain(Entry_2, 'Entry_2Val')
+beMain(SL, 'SLVal')
+
+const reCalc = () => {
     result_R.innerText = `${mR(SLP_1Val/SLP_2Val)}`
     result_RS.innerText = `${mR((SLP_1Val/SLP_2Val)*(SLu_2Val/SLu_1Val))}`
 
@@ -132,35 +191,12 @@ function main(x) {
 
     result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
     result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
-
-    // cl(percentCalc(Entry_1Val, SLVal))
-    if (x === 'Entry_1Val') {
-        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
-    } else if (x === 'Entry_2Val') {
-        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
-    } else if (x === 'SLVal') {
-        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
-        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
-    }
 }
 
-function beMain(x, y) {
-    x.oninput = function() {
-        eval(`${y} = Number(this.value)`)
-        main(y)
-    }
-}
+reCalcBtn.addEventListener("click", () => {
+    reCalc()
+})
 
-
-/// BEGIN ///
-///
-
-beMain(SLP_1, 'SLP_1Val')
-beMain(SLP_2, 'SLP_2Val')
-beMain(LEV, 'LEVVal')
-beMain(SLu_1, 'SLu_1Val')
-beMain(SLu_2, 'SLu_2Val')
-
-beMain(Entry_1, 'Entry_1Val')
-beMain(Entry_2, 'Entry_2Val')
-beMain(SL, 'SLVal')
+cpyBtn.addEventListener("click", () => {
+    console.log(`${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${SLVal} ${SLu_1Val + SLu_2Val}U ${mR(result_newEntryVal)}`)
+})

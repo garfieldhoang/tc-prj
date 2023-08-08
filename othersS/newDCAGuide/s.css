@@ -228,3 +228,41 @@ input {
 }
 
 /* background-color: green; */
+
+.fxBtnsCont {
+  height: 60px;
+  margin-top: 20px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.fxBtnsCont_btn {
+  height: 100%;
+  width: 30%;
+  border: 3px dashed black;
+  border-radius: 20px;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fxBtnsCont_btn:hover {
+  cursor: pointer;
+  scale: 0.95;
+}
+
+.fxBtnsCont_btn:active {
+  scale: 0.8;
+  transition: 0s;
+}
+
+.fxBtnsCont_btn_1 {
+  background-color: #95ed95;
+}
+
+.fxBtnsCont_btn_2 {
+  background-color: #88e5ef;
+}
