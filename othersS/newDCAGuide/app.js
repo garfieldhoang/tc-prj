@@ -33,6 +33,7 @@ var LEVVal, result_RVal, result_RSVal, Vol_1Val, Vol_2Val, SLu_1Val, SLu_2Val
 var Entry_1 = document.getElementById('Entry_1')
 var Entry_2 = document.getElementById('Entry_2')
 var SL = document.getElementById('SL')
+var TP = document.getElementById('TP')
 var result_rate0_1 = document.getElementById('result_rate0_1')
 var result_newEntry = document.getElementById('result_newEntry')
 
@@ -55,6 +56,23 @@ LEV.value = LEVVal = 20
 ///
 
 /// ## btns ## ///
+
+// cpys
+Vol_1.addEventListener("click", () => navigator.clipboard.writeText(mR(Vol_1Val)))
+Vol_2.addEventListener("click", () => navigator.clipboard.writeText(mR(Vol_2Val)))
+
+result_newEntry.addEventListener("click", () => navigator.clipboard.writeText(mR(result_newEntryVal)))
+
+reCalcBtn.addEventListener("click", () => {
+    reCalc()
+})
+
+cpyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(`${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${TP.value} ${SLu_1Val + SLu_2Val}U ${mR(result_newEntryVal)}`)
+    
+})
+
+// main
 
 logo.addEventListener("click", function() {
     if (!btnsClass[0].classList.contains('dp_none')) {
@@ -193,10 +211,3 @@ const reCalc = () => {
     result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
 }
 
-reCalcBtn.addEventListener("click", () => {
-    reCalc()
-})
-
-cpyBtn.addEventListener("click", () => {
-    console.log(`${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${SLVal} ${SLu_1Val + SLu_2Val}U ${mR(result_newEntryVal)}`)
-})
