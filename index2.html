@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/img/hmm.png" type="image/x-icon" />
     <title>TC PRJ</title>
-</head>
-<style type="text/css">
+  </head>
+  <style type="text/css">
     * {
-        margin: 0;
-        box-sizing: border-box;
+      margin: 0;
+      box-sizing: border-box;
     }
 
     body {
-        background-color: pink;
+      background-color: pink;
     }
 
     #tab_1 {
-        padding: 0;
-        margin: 0;
-        /*border: 1px solid black;*/
+      padding: 0;
+      margin: 0;
+      /*border: 1px solid black;*/
 
-        width: 100%;
-        /*display: block;*/
-        /*float: left;*/
-        /*height: 100%;*/
-        /*height: 100vh;*/
-        /*height: 100rem;*/
+      width: 100%;
+      /*display: block;*/
+      /*float: left;*/
+      /*height: 100%;*/
+      /*height: 100vh;*/
+      /*height: 100rem;*/
     }
 
     .tab {
-        width: 100%;
-        height: 5rem;
-        background: red;
-        background: pink;
+      width: 100%;
+      height: 5rem;
+      background: red;
+      background: pink;
     }
 
-    
-    .navigation{
-        /* position: absolute; */
-        /* bottom: 20px; */
-        /* left: 50%; */
-        /* transform: translateX(-50%); */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .navigation {
+      /* position: absolute; */
+      /* bottom: 20px; */
+      /* left: 50%; */
+      /* transform: translateX(-50%); */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    
-    .bar{
-        width: 120px;
-        height: 50px;
-        border: 3px solid #fff;
-        margin: 6px 20px;
-        cursor: pointer;
-        transition: 0.4s;
+
+    .bar {
+      width: 120px;
+      height: 50px;
+      border: 3px solid #fff;
+      margin: 6px 20px;
+      cursor: pointer;
+      transition: 0.4s;
     }
-    
-    .bar:hover{
-        background: #fff;
+
+    .bar:hover {
+      background: #fff;
     }
-    
+
     /* input[name="r"]{
         visibility: hidden;
     }
@@ -68,29 +67,42 @@
     #r1:checked ~ .s1 {
         margin-left: 0;
     } */
-</style>
-<!-- <link rel="stylesheet" href="./assets/css/index1.css"> -->
-<!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
-<body>
+  </style>
+  <!-- <link rel="stylesheet" href="./assets/css/index1.css"> -->
+  <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+  <body>
     <!-- <iframe id="tab_1" src="./othersS/newDCAGuide/index.html" height="">></iframe> -->
 
-    <iframe id="tab_1" src="./othersS/newDCAGuide/index.html" onload='javascript:(function(o){o.style.height=(Number(o.contentWindow.document.body.scrollHeight)+50)+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>
-    
+    <iframe
+      id="tab_1"
+      src="./othersS/newDCAGuide/index.html"
+      onload='javascript:(function(o){o.style.height=(Number(o.contentWindow.document.body.scrollHeight)+50)+"px";}(this));'
+      style="height: 200px; width: 100%; border: none; overflow: hidden"
+    ></iframe>
+
     <div class="navigation tab">
-        <!-- <input type="radio" name="r" id="r1" checked>
+      <!-- <input type="radio" name="r" id="r1" checked>
         <input type="radio" name="r" id="r2"> -->
-        <label for="r1" class="bar"></label>
-        <label for="r2" class="bar"></label>
+      <label for="r1" class="bar"></label>
+      <label for="r2" class="bar"></label>
+      <label for="r3" class="bar"></label>
     </div>
-</body>
-<script>
-    var frame = document.getElementById('tab_1')
-    var bar = document.querySelectorAll('.bar')
-    
-    bar[0].addEventListener("click", () => frame.src = './othersS/newDCAGuide/index.html')
-    bar[1].addEventListener("click", () => frame.src = './index.html')
-</script>
-<!-- <script type="text/javascript">
+  </body>
+  <script>
+    var frame = document.getElementById("tab_1");
+    var bar = document.querySelectorAll(".bar");
+
+    bar[0].addEventListener(
+      "click",
+      () => (frame.src = "./othersS/newDCAGuide/index.html")
+    );
+    bar[1].addEventListener(
+      "click",
+      () => (frame.src = "./othersS/newDCAGuide_2/index.html")
+    );
+    bar[2].addEventListener("click", () => (frame.src = "./index.html"));
+  </script>
+  <!-- <script type="text/javascript">
         // var div = document.getElementById('tab_1'); 
         // div.onload = function() {
         //     console.log(div.contentWindow.document.body)
@@ -108,5 +120,5 @@
     })
 
 </script> -->
-<!-- <script src="./assets/js/style.js"></script> -->
+  <!-- <script src="./assets/js/style.js"></script> -->
 </html>

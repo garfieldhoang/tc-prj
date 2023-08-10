@@ -32,14 +32,13 @@ var LEVVal, result_RVal, result_RSVal, rrNewVal, Vol_1Val, Vol_2Val, SLu_1Val, S
 
 var Entry_1 = document.getElementById('Entry_1')
 var Entry_2 = document.getElementById('Entry_2')
-var SL_1 = document.getElementById('SL_1')
-var SL_2 = document.getElementById('SL_2')
+var SL = document.getElementById('SL')
 var TP = document.getElementById('TP')
 var result_rate0_1 = document.getElementById('result_rate0_1')
 var result_newEntry = document.getElementById('result_newEntry')
 var rrNew = document.getElementById('rrNew')
 
-var Entry_1Val, Entry_2Val, SL_1Val, SL_2Val, result_newEntryVal, result_rate0_1Val
+var Entry_1Val, Entry_2Val, SLVal, result_newEntryVal, result_rate0_1Val
 
 var btns = document.querySelectorAll('.btn')
 var btnsClass = document.querySelectorAll('.btns')
@@ -182,13 +181,13 @@ function main(x) {
     
     // cl(percentCalc(Entry_1Val, SLVal))
     if (x === 'Entry_1Val') {
-        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SL_1Val), 2)
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
     } else if (x === 'Entry_2Val') {
-        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SL_2Val), 2)
-    } else if (x === 'SL_1Val') {
-        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SL_1Val), 2)
-    } else if (x === 'SL_2Val') {
-        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SL_2Val), 2)
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
+    } else if (x === 'SLVal') {
+        SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2)
+        SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2)
+    }
 }
 
 function beMain(x, y) {
@@ -209,8 +208,7 @@ beMain(SLu_2, 'SLu_2Val')
 
 beMain(Entry_1, 'Entry_1Val')
 beMain(Entry_2, 'Entry_2Val')
-beMain(SL_1, 'SL_1Val')
-beMain(SL_2, 'SL_2Val')
+beMain(SL, 'SLVal')
 
 const reCalc = () => {
     result_R.innerText = `${mR(SLP_1Val/SLP_2Val)}`

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../assets/img/hmm.png" type="image/x-icon" />
+    <title>SG App</title>
+  </head>
+
+  <link rel="stylesheet" type="text/css" href="s.css" />
+  <body>
+    <div id="main" class="">
+      <div class="row logoCon noselect">
+        <div class="logo noselect"></div>
+      </div>
+
+      <div class="row">
+        <div class="col col-3">
+          <!-- <span class="details">S1</span> -->
+          <input
+            class="margin-top-bot"
+            id="SLP_1"
+            type=""
+            name=""
+            placeholder="SL%_1"
+          />
+
+          <!-- <span class="details">G1</span> -->
+          <input
+            class="margin-top-bot"
+            id="SLP_2"
+            type=""
+            name=""
+            placeholder="SL%_2"
+          />
+          <input
+            class="margin-top-bot"
+            id="LEV"
+            type=""
+            name=""
+            placeholder="LEV"
+          />
+        </div>
+
+        <div class="col col-3">
+          <div id="Vol_1_ori" class="margin-top-bot textSize_px">oriVol_1</div>
+          <div id="Vol_2_ori" class="margin-top-bot textSize_px">oriVol_2</div>
+          <div id="result_R" class="margin-top-bot textSize_px">>> R <<</div>
+          <div id="result_RS" class="margin-top-bot textSize_px">> RS <</div>
+        </div>
+
+        <div class="col col-3">
+          <div id="Vol_1" class="margin-top-bot textSize_px">Vol 1</div>
+          <div id="Vol_2" class="margin-top-bot textSize_px">Vol 2</div>
+          <!-- <span class="details">S2</span> -->
+          <input
+            class="margin-top-bot"
+            id="SLu_1"
+            type=""
+            name=""
+            placeholder="SLu_1"
+          />
+
+          <!-- <span class="details">G2</span> -->
+          <input
+            class="margin-top-bot"
+            id="SLu_2"
+            type=""
+            name=""
+            placeholder="SLu_2"
+          />
+        </div>
+      </div>
+
+      <div class="row fxBtnsCont">
+        <h2 class="fxBtnsCont_btn fxBtnsCont_btn_1">reCalc</h2>
+        <h2 class="fxBtnsCont_btn fxBtnsCont_btn_2">cpy</h2>
+      </div>
+
+      <h1 class="btns dp_none">------------</h1>
+
+      <div class="row btns btns_index_row dp_none noselect">
+        <div class="btns_index_cont">
+          <h2 class="left">- SLu_1 +</h2>
+          <h2 class="left">- SLu_2 +</h2>
+        </div>
+      </div>
+
+      <!-- Add/Minus 1-unit row -->
+      <div class="row btns dp_none noselect">
+        <div class="btns_box btns_box_left">
+          <h2>[1]</h2>
+        </div>
+
+        <div class="btns_box btns_box_right">
+          <div class="btn btn_1_1"></div>
+          <div class="btn btn_1_2"></div>
+          <div class="btn btn_1_3"></div>
+          <div class="btn btn_1_4"></div>
+        </div>
+      </div>
+
+      <!-- Add/Minus 5-unit row -->
+
+      <div class="row btns dp_none noselect">
+        <div class="btns_box btns_box_left">
+          <h2>[5]</h2>
+        </div>
+        <div class="btns_box btns_box_right">
+          <div class="btn btn_1_1"></div>
+          <div class="btn btn_1_2"></div>
+          <div class="btn btn_1_3"></div>
+          <div class="btn btn_1_4"></div>
+        </div>
+      </div>
+
+      <!-- Add/Minus 10-unit row -->
+      <div class="row btns dp_none noselect">
+        <div class="btns_box btns_box_left">
+          <h2>[10]</h2>
+        </div>
+        <div class="btns_box btns_box_right">
+          <div class="btn btn_1_1"></div>
+          <div class="btn btn_1_2"></div>
+          <div class="btn btn_1_3"></div>
+          <div class="btn btn_1_4"></div>
+        </div>
+      </div>
+
+      <div id="result">
+        <!-- <h2>------</h2> -->
+        <br />
+        <h1>------------</h1>
+        <br />
+      </div>
+
+      <div class="row" style="margin-bottom: 10px">
+        <div class="col col-1">
+          <div
+            id="result_sumVolOri"
+            class="margin-top-bot textSize_px"
+            style="font-style: italic"
+          >
+            > sumOri <
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-bottom: 10px">
+        <div class="col col-1">
+          <strong id="result_sumVol" class="margin-top-bot textSize_px"
+            >> sum <</strong
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-2">
+          <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="Entry_1"
+              type=""
+              name=""
+              placeholder="Entry_1"
+            />
+
+            <div class="cpyBtn_inputBox3class"></div>
+          </div>
+
+          <!-- <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="Entry_2"
+              type=""
+              name=""
+              placeholder="Entry_2"
+            />
+            <div class="cpyBtn_inputBox3class"></div>
+          </div> -->
+
+          <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="SL_1"
+              type=""
+              name=""
+              placeholder="SL_1"
+            />
+            <!-- style="width: calc(8.6rem * 86 / 100)" -->
+            <div class="cpyBtn_inputBox3class"></div>
+          </div>
+
+          <h3>---#---</h3>
+
+          <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="Entry_2"
+              type=""
+              name=""
+              placeholder="Entry_2"
+            />
+            <div class="cpyBtn_inputBox3class"></div>
+          </div>
+
+          <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="SL_2"
+              type=""
+              name=""
+              placeholder="SL_2"
+            />
+            <!-- style="width: calc(8.6rem * 86 / 100)" -->
+            <div class="cpyBtn_inputBox3class"></div>
+          </div>
+
+          <h3>---#---</h3>
+
+          <div class="inputBox3classCont">
+            <input
+              class="margin-top-bot inputBox3class"
+              id="TP"
+              placeholder="TP"
+            />
+            <!-- style="width: calc(8.6rem * 86 / 100)" -->
+            <div class="cpyBtn_inputBox3class"></div>
+          </div>
+        </div>
+
+        <div class="col col-2">
+          <div
+            id="result_rate0_1"
+            class="margin-top-bot textSize_px"
+            style="font-style: italic"
+          >
+            Rate 0/1
+          </div>
+          <div id="result_newEntryCont">
+            <strong id="result_newEntry" class="margin-top-bot textSize_px"
+              >NEntry
+            </strong>
+            <div id="cpyBtnRealNEntry"></div>
+          </div>
+          <div
+            id="rrNew"
+            class="margin-top-bot textSize_px"
+            style="font-style: italic"
+          >
+            RR_new
+          </div>
+        </div>
+      </div>
+
+      <textarea
+        type=""
+        name=""
+        class="noteInput"
+        placeholder="#Notes... (SL)"
+      ></textarea>
+      <h1>------------</h1>
+
+      <a class="" href="../../index.html" id="home"></a>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="app.js"></script>
+</html>
