@@ -273,6 +273,15 @@ input {
   cursor: pointer;
 }
 
+#result_newEntry:active {
+  font-size: 20px;
+}
+
+#Vol_1:active,
+#Vol_2:active {
+  scale: 0.7;
+}
+
 .inputBox3class::after {
   content: "";
   /* display: block; */
@@ -296,6 +305,10 @@ input {
   cursor: pointer;
 }
 
+.cpyBtn_inputBox3class:active {
+  scale: 0.7;
+}
+
 .inputBox3classCont {
   /* width: 100%; */
   position: relative;
@@ -313,4 +326,28 @@ input {
   .cpyBtn_inputBox3class {
     right: -20px;
   }
+}
+
+#result_newEntryCont {
+  position: relative;
+}
+
+#cpyBtnRealNEntry {
+  content: "";
+  position: absolute;
+  height: 16px;
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0.596);
+  border-radius: 50%;
+  top: 50%;
+  right: -26px;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+}
+
+#cpyBtnRealNEntry:active {
+  scale: 80%;
+  /* background-color: ; */
 }

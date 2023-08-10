@@ -49,6 +49,8 @@ var cpyBtn = document.querySelector('.fxBtnsCont_btn_2')
 
 var cpyBtn_inputBox3class = document.querySelectorAll('.cpyBtn_inputBox3class')
 
+var cpyBtnRealNEntry = document.querySelector('#cpyBtnRealNEntry')
+
 
 // Default Values
 LEV.value = LEVVal = 20
@@ -79,6 +81,8 @@ cpyBtn_inputBox3class[0].addEventListener("click", () => navigator.clipboard.wri
 cpyBtn_inputBox3class[1].addEventListener("click", () => navigator.clipboard.writeText(mR(Entry_2Val)))
 cpyBtn_inputBox3class[2].addEventListener("click", () => navigator.clipboard.writeText(mR(SLVal)))
 cpyBtn_inputBox3class[3].addEventListener("click", () => navigator.clipboard.writeText(mR(TP.value)))
+
+cpyBtnRealNEntry.addEventListener("click", () => navigator.clipboard.writeText(mR5(result_newEntryVal)))
 
 
 // main
@@ -135,6 +139,11 @@ function mR(num) {
 
 function mR2(num) {
     num = Math.round(num*100)/100
+    return num
+}
+
+function mR5(num) {
+    num = Math.round(num*100000)/100000
     return num
 }
 
