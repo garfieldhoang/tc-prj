@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/img/hmm.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./index2.css" />
     <title>TC PRJ</title>
   </head>
   <style type="text/css">
@@ -87,6 +88,38 @@
       <label for="r2" class="bar"></label>
       <label for="r3" class="bar"></label>
     </div>
+
+    <div class="fixedBotNav">
+      <div class="openLGBtn" onclick="levGuideHandle()"></div>
+      <form action="#">
+        <!-- <label for="lang">Language</label> -->
+        <select name="languages" id="lang">
+          <option value="">APT</option>
+          <option value="">CHZ</option>
+          <option value="">DYDX</option>
+          <option value="">EDU</option>
+          <option value="">ETC</option>
+          <option value="">ETH</option>
+          <option value="">HOOK</option>
+          <option value="">LDO</option>
+          <option value="">LINK</option>
+          <option value="">LTC</option>
+          <option value="">MASK</option>
+          <option value="">NEAR</option>
+          <option value="">OP</option>
+          <option value="">XRP</option>
+        </select>
+        <!-- <input type="submit" value="Submit" /> -->
+      </form>
+    </div>
+
+    <div class="levGuide">
+      <div class="closeLGArea" onclick="levGuideHandle()"></div>
+      <!-- <div class="imgCtn"> -->
+      <img src="./assets/img/_const/guide.png" alt="" />
+      <!-- </div> -->
+      <div class="closeLGBtn" onclick="levGuideHandle()"></div>
+    </div>
   </body>
   <script>
     var frame = document.getElementById("tab_1");
@@ -101,6 +134,17 @@
       () => (frame.src = "./othersS/newDCAGuide_2/index.html")
     );
     bar[2].addEventListener("click", () => (frame.src = "./index.html"));
+  </script>
+  <script>
+    var levGuide = document.querySelector(".levGuide");
+    var lgClst = levGuide.classList;
+
+    const levGuideHandle = () =>
+      lgClst.contains("levGuideShow")
+        ? lgClst.remove("levGuideShow")
+        : lgClst.add("levGuideShow");
+
+    // console.log("hi");
   </script>
   <!-- <script type="text/javascript">
         // var div = document.getElementById('tab_1'); 
