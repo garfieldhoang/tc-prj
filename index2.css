@@ -21,6 +21,8 @@
   cursor: pointer;
   opacity: 0.8;
   transition: 0.2s;
+
+  box-shadow: 2px 2px 5px 0 #4c4c4c;
 }
 
 .fixedBotNav .openLGBtn:hover {
@@ -84,6 +86,8 @@
   cursor: pointer;
   opacity: 0.8;
   transition: 0.2s;
+
+  box-shadow: 2px 2px 5px 0 black;
 }
 
 .levGuide .closeLGBtn:hover {
