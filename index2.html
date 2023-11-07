@@ -74,9 +74,10 @@
   <body>
     <!-- <iframe id="tab_1" src="./othersS/newDCAGuide/index.html" height="">></iframe> -->
 
+    <!-- src="./othersS/newDCAGuide/index.html" -->
     <iframe
       id="tab_1"
-      src="./othersS/newDCAGuide/index.html"
+      src="./othersS/DCA_3x"
       onload='javascript:(function(o){o.style.height=(Number(o.contentWindow.document.body.scrollHeight)+50)+"px";}(this));'
       style="height: 200px; width: 100%; border: none; overflow: hidden"
     ></iframe>
@@ -87,10 +88,12 @@
       <label for="r1" class="bar"></label>
       <label for="r2" class="bar"></label>
       <label for="r3" class="bar"></label>
+      <label for="r4" class="bar"></label>
     </div>
 
     <div class="fixedBotNav">
       <div class="openLGBtn" onclick="levGuideHandle()"></div>
+      <div class="openLGBtn openLGBtn__2" onclick="sls2CheckSecHandle()"></div>
       <form action="#">
         <!-- <label for="lang">Language</label> -->
         <select name="languages" id="lang">
@@ -120,6 +123,14 @@
       <!-- </div> -->
       <div class="closeLGBtn" onclick="levGuideHandle()"></div>
     </div>
+
+    <div class="sls2CheckSec">
+      <div class="closeLGArea" onclick="sls2CheckSecHandle()"></div>
+      <div class="sls2CheckSec__SL1 sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL2 sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL1_calc sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL2_calc sls2CheckSec__cmn"></div>
+    </div>
   </body>
   <script>
     var frame = document.getElementById("tab_1");
@@ -129,11 +140,12 @@
       "click",
       () => (frame.src = "./othersS/newDCAGuide/index.html")
     );
-    bar[1].addEventListener(
+    bar[1].addEventListener("click", () => (frame.src = "./othersS/DCA_3x"));
+    bar[2].addEventListener(
       "click",
       () => (frame.src = "./othersS/newDCAGuide_2/index.html")
     );
-    bar[2].addEventListener("click", () => (frame.src = "./index.html"));
+    bar[3].addEventListener("click", () => (frame.src = "./index.html"));
   </script>
   <script>
     var levGuide = document.querySelector(".levGuide");
@@ -145,6 +157,14 @@
         : lgClst.add("levGuideShow");
 
     // console.log("hi");
+
+    var sls2CheckSec = document.querySelector(".sls2CheckSec");
+    var sls2CheckSecClst = sls2CheckSec.classList;
+
+    const sls2CheckSecHandle = () =>
+      sls2CheckSecClst.contains("levGuideShow")
+        ? sls2CheckSecClst.remove("levGuideShow")
+        : sls2CheckSecClst.add("levGuideShow");
   </script>
   <!-- <script type="text/javascript">
         // var div = document.getElementById('tab_1'); 

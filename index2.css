@@ -23,11 +23,17 @@
   transition: 0.2s;
 
   box-shadow: 2px 2px 5px 0 #4c4c4c;
+  border: dashed 0.6px #4c4c4c;
 }
 
 .fixedBotNav .openLGBtn:hover {
   scale: 0.9;
   opacity: 1;
+}
+
+.fixedBotNav .openLGBtn__2 {
+  left: 76px;
+  background: green;
 }
 
 .fixedBotNav select {
@@ -65,6 +71,7 @@
   max-height: 80%;
 }
 
+.sls2CheckSec .closeLGArea,
 .levGuide .closeLGArea {
   position: absolute;
   width: 100%;
@@ -101,5 +108,58 @@
 
 .levGuideShow {
   /* transform: translateX(); */
+  left: 0 !important;
+}
+
+.sls2CheckSec {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  /* center / cover no-repeat url() */
+  /* background: center / contain no-repeat url("./assets/img/_const/guide.png"); */
+
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  left: -100%;
   left: 0;
+  right: 0;
+  /* toggle here */
+  left: 100%;
+
+  display: flex;
+  align-items: center;
+  transition: 0.15s;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sls2CheckSec__cmn {
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 6px dashed #4c4c4c;
+  box-shadow: 4px 4px 6px 0 #000;
+  margin: 6px 0;
+}
+
+.sls2CheckSec__SL1 {
+  background-color: rgb(161, 44, 44);
+  transform: translateX(-50%);
+}
+
+.sls2CheckSec__SL2 {
+  background-color: rgb(14, 106, 234);
+  transform: translateX(50%);
+}
+
+.sls2CheckSec__SL1_calc {
+  background-color: rgb(56, 150, 30);
+  transform: translateX(-50%);
+}
+
+.sls2CheckSec__SL2_calc {
+  background-color: rgb(180, 117, 17);
+  transform: translateX(50%);
 }
