@@ -169,3 +169,47 @@
   background-color: rgb(180, 117, 17);
   transform: translateX(50%);
 }
+
+/*  */
+/* 3x */
+/*  */
+
+#sls2CheckSec__3x .sls2CheckSec__cmn {
+  width: 120px;
+  line-height: 120px;
+  font-size: 23px;
+}
+
+#sls2CheckSec__3x .sls2CheckSec__SL1 {
+  background-color: rgb(161, 44, 44);
+  transform: translateX(-50%);
+}
+
+#sls2CheckSec__3x .sls2CheckSec__SL2 {
+  background-color: rgb(14, 106, 234);
+  transform: translateX(0%);
+}
+
+.sls2CheckSec__SL3 {
+  background-color: rgb(198, 66, 9);
+  transform: translateX(50%);
+}
+
+#sls2CheckSec__3x .sls2CheckSec__SL1_calc {
+  background-color: rgb(56, 150, 30);
+  transform: translateX(-50%);
+}
+
+#sls2CheckSec__3x .sls2CheckSec__SL2_calc {
+  background-color: rgb(180, 117, 17);
+  transform: translateX(0%);
+}
+
+.sls2CheckSec__SL3_calc {
+  background-color: rgb(40, 150, 201);
+  transform: translateX(50%);
+}
+
+.sls2CheckSec__disabled {
+  display: none;
+}

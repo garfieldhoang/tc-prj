@@ -227,6 +227,7 @@ function main(x) {
   } else if (x === "SLVal") {
     SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
     SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
   }
 }
 
@@ -295,19 +296,25 @@ function checkLorS() {
   var sls2CheckSec__SL1,
     sls2CheckSec__SL2,
     sls2CheckSec__SL1_calc,
-    sls2CheckSec__SL2_calc;
+    sls2CheckSec__SL2_calc,
+    sls2CheckSec__SL3,
+    sls2CheckSec__SL3_calc;
 
   let isLong;
   isLong = Entry_1Val > SLVal ? true : false;
 
   sls2CheckSec__SL1 = mRs(Vol_1Val, 3);
   sls2CheckSec__SL2 = mRs(Vol_2Val, 3);
+  sls2CheckSec__SL3 = mRs(Vol_3Val, 3);
+
   if (isLong) {
     sls2CheckSec__SL1_calc = mRs(Vol_1Val - SLu_1Val, 3);
     sls2CheckSec__SL2_calc = mRs(Vol_2Val - SLu_2Val, 3);
+    sls2CheckSec__SL3_calc = mRs(Vol_3Val - SLu_3Val, 3);
   } else {
     sls2CheckSec__SL1_calc = mRs(Vol_1Val + SLu_1Val, 3);
     sls2CheckSec__SL2_calc = mRs(Vol_2Val + SLu_2Val, 3);
+    sls2CheckSec__SL3_calc = mRs(Vol_3Val + SLu_3Val, 3);
   }
 
   sessionStorage.setItem(
@@ -317,6 +324,8 @@ function checkLorS() {
       sls2CheckSec__SL2: sls2CheckSec__SL2,
       sls2CheckSec__SL1_calc: sls2CheckSec__SL1_calc,
       sls2CheckSec__SL2_calc: sls2CheckSec__SL2_calc,
+      sls2CheckSec__SL3: sls2CheckSec__SL3,
+      sls2CheckSec__SL3_calc: sls2CheckSec__SL3_calc,
     })
   );
 

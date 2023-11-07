@@ -124,26 +124,52 @@
       <div class="closeLGBtn" onclick="levGuideHandle()"></div>
     </div>
 
-    <div class="sls2CheckSec">
+    <div id="sls2CheckSec__2x" class="sls2CheckSec sls2CheckSec__actived">
       <div class="closeLGArea" onclick="sls2CheckSecHandle()"></div>
       <div class="sls2CheckSec__SL1 sls2CheckSec__cmn"></div>
       <div class="sls2CheckSec__SL2 sls2CheckSec__cmn"></div>
       <div class="sls2CheckSec__SL1_calc sls2CheckSec__cmn"></div>
       <div class="sls2CheckSec__SL2_calc sls2CheckSec__cmn"></div>
     </div>
+
+    <div id="sls2CheckSec__3x" class="sls2CheckSec sls2CheckSec__disabled">
+      <div class="closeLGArea" onclick="sls2CheckSecHandle()"></div>
+      <div class="sls2CheckSec__SL1 sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL2 sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL3 sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL1_calc sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL2_calc sls2CheckSec__cmn"></div>
+      <div class="sls2CheckSec__SL3_calc sls2CheckSec__cmn"></div>
+    </div>
   </body>
   <script>
     var frame = document.getElementById("tab_1");
     var bar = document.querySelectorAll(".bar");
 
+    var sls2CheckSec__2x = document.getElementById("sls2CheckSec__2x");
+    var sls2CheckSec__3x = document.getElementById("sls2CheckSec__3x");
+
+    const toggleHidin = (a, b) => {
+      a.classList.add("sls2CheckSec__disabled");
+      a.classList.remove("sls2CheckSec__actived");
+      b.classList.add("sls2CheckSec__actived");
+      b.classList.remove("sls2CheckSec__disabled");
+    };
+
     bar[0].addEventListener("click", () => {
       frame.src = "./othersS/newDCAGuide/index.html";
       sessionStorage.clear();
+      toggleHidin(sls2CheckSec__3x, sls2CheckSec__2x);
+      sessionStorage.setItem("currX", 2);
     });
+
     bar[1].addEventListener("click", () => {
       frame.src = "./othersS/DCA_3x";
       sessionStorage.clear();
+      toggleHidin(sls2CheckSec__2x, sls2CheckSec__3x);
+      sessionStorage.setItem("currX", 3);
     });
+
     bar[2].addEventListener("click", () => {
       frame.src = "./othersS/newDCAGuide_2/index.html";
       sessionStorage.clear();
@@ -164,10 +190,10 @@
 
     // console.log("hi");
 
-    var sls2CheckSec = document.querySelector(".sls2CheckSec");
-    var sls2CheckSecClst = sls2CheckSec.classList;
-
     const sls2CheckSecHandle = () => {
+      var sls2CheckSec = document.querySelector(".sls2CheckSec__actived");
+      var sls2CheckSecClst = sls2CheckSec.classList;
+
       sls2CheckSecClst.contains("levGuideShow")
         ? sls2CheckSecClst.remove("levGuideShow")
         : sls2CheckSecClst.add("levGuideShow");
@@ -177,23 +203,43 @@
         sls2CheckSec__SL2,
         sls2CheckSec__SL1_calc,
         sls2CheckSec__SL2_calc,
+        sls2CheckSec__SL3,
+        sls2CheckSec__SL3_calc,
       } = JSON.parse(sessionStorage.getItem("isLong"));
 
-      var domEl__sls2CheckSec__SL1 =
-        document.querySelector(".sls2CheckSec__SL1");
-      var domEl__sls2CheckSec__SL2 =
-        document.querySelector(".sls2CheckSec__SL2");
+      const currX = sessionStorage.getItem("currX");
+
+      var domEl__sls2CheckSec__SL1 = document.querySelector(
+        `#sls2CheckSec__${currX}x .sls2CheckSec__SL1`
+      );
+      var domEl__sls2CheckSec__SL2 = document.querySelector(
+        `#sls2CheckSec__${currX}x .sls2CheckSec__SL2`
+      );
       var domEl__sls2CheckSec__SL1_calc = document.querySelector(
-        ".sls2CheckSec__SL1_calc"
+        `#sls2CheckSec__${currX}x .sls2CheckSec__SL1_calc`
       );
       var domEl__sls2CheckSec__SL2_calc = document.querySelector(
-        ".sls2CheckSec__SL2_calc"
+        `#sls2CheckSec__${currX}x .sls2CheckSec__SL2_calc`
       );
 
       domEl__sls2CheckSec__SL1.innerText = sls2CheckSec__SL1;
       domEl__sls2CheckSec__SL2.innerText = sls2CheckSec__SL2;
       domEl__sls2CheckSec__SL1_calc.innerText = sls2CheckSec__SL1_calc;
       domEl__sls2CheckSec__SL2_calc.innerText = sls2CheckSec__SL2_calc;
+
+      console.log(currX, typeof currX);
+
+      if (currX === "3") {
+        var domEl__sls2CheckSec__SL3 = document.querySelector(
+          `#sls2CheckSec__${currX}x .sls2CheckSec__SL3`
+        );
+        var domEl__sls2CheckSec__SL3_calc = document.querySelector(
+          `#sls2CheckSec__${currX}x .sls2CheckSec__SL3_calc`
+        );
+
+        domEl__sls2CheckSec__SL3.innerText = sls2CheckSec__SL3;
+        domEl__sls2CheckSec__SL3_calc.innerText = sls2CheckSec__SL3_calc;
+      }
     };
   </script>
   <!-- <script type="text/javascript">
