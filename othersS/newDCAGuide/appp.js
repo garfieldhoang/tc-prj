@@ -260,4 +260,38 @@ const reCalc = () => {
     Math.abs(TP.value - result_newEntryVal) /
     Math.abs(result_newEntryVal - SLVal);
   rrNew.innerText = `${mR2(rrNewVal)}`;
+
+  checkLorS();
 };
+
+function checkLorS() {
+  var sls2CheckSec__SL1,
+    sls2CheckSec__SL2,
+    sls2CheckSec__SL1_calc,
+    sls2CheckSec__SL2_calc;
+
+  let isLong;
+  isLong = Entry_1Val > SLVal ? true : false;
+
+  sls2CheckSec__SL1 = mRs(Vol_1Val, 3);
+  sls2CheckSec__SL2 = mRs(Vol_2Val, 3);
+  if (isLong) {
+    sls2CheckSec__SL1_calc = mRs(Vol_1Val - SLu_1Val, 3);
+    sls2CheckSec__SL2_calc = mRs(Vol_2Val - SLu_2Val, 3);
+  } else {
+    sls2CheckSec__SL1_calc = mRs(Vol_1Val + SLu_1Val, 3);
+    sls2CheckSec__SL2_calc = mRs(Vol_2Val + SLu_2Val, 3);
+  }
+
+  sessionStorage.setItem(
+    "isLong",
+    JSON.stringify({
+      sls2CheckSec__SL1: sls2CheckSec__SL1,
+      sls2CheckSec__SL2: sls2CheckSec__SL2,
+      sls2CheckSec__SL1_calc: sls2CheckSec__SL1_calc,
+      sls2CheckSec__SL2_calc: sls2CheckSec__SL2_calc,
+    })
+  );
+
+  console.log(JSON.parse(sessionStorage.getItem("isLong")));
+}

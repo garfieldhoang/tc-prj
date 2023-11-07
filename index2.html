@@ -136,16 +136,22 @@
     var frame = document.getElementById("tab_1");
     var bar = document.querySelectorAll(".bar");
 
-    bar[0].addEventListener(
-      "click",
-      () => (frame.src = "./othersS/newDCAGuide/index.html")
-    );
-    bar[1].addEventListener("click", () => (frame.src = "./othersS/DCA_3x"));
-    bar[2].addEventListener(
-      "click",
-      () => (frame.src = "./othersS/newDCAGuide_2/index.html")
-    );
-    bar[3].addEventListener("click", () => (frame.src = "./index.html"));
+    bar[0].addEventListener("click", () => {
+      frame.src = "./othersS/newDCAGuide/index.html";
+      sessionStorage.clear();
+    });
+    bar[1].addEventListener("click", () => {
+      frame.src = "./othersS/DCA_3x";
+      sessionStorage.clear();
+    });
+    bar[2].addEventListener("click", () => {
+      frame.src = "./othersS/newDCAGuide_2/index.html";
+      sessionStorage.clear();
+    });
+    bar[3].addEventListener("click", () => {
+      frame.src = "./index.html";
+      sessionStorage.clear();
+    });
   </script>
   <script>
     var levGuide = document.querySelector(".levGuide");
@@ -161,10 +167,34 @@
     var sls2CheckSec = document.querySelector(".sls2CheckSec");
     var sls2CheckSecClst = sls2CheckSec.classList;
 
-    const sls2CheckSecHandle = () =>
+    const sls2CheckSecHandle = () => {
       sls2CheckSecClst.contains("levGuideShow")
         ? sls2CheckSecClst.remove("levGuideShow")
         : sls2CheckSecClst.add("levGuideShow");
+
+      const {
+        sls2CheckSec__SL1,
+        sls2CheckSec__SL2,
+        sls2CheckSec__SL1_calc,
+        sls2CheckSec__SL2_calc,
+      } = JSON.parse(sessionStorage.getItem("isLong"));
+
+      var domEl__sls2CheckSec__SL1 =
+        document.querySelector(".sls2CheckSec__SL1");
+      var domEl__sls2CheckSec__SL2 =
+        document.querySelector(".sls2CheckSec__SL2");
+      var domEl__sls2CheckSec__SL1_calc = document.querySelector(
+        ".sls2CheckSec__SL1_calc"
+      );
+      var domEl__sls2CheckSec__SL2_calc = document.querySelector(
+        ".sls2CheckSec__SL2_calc"
+      );
+
+      domEl__sls2CheckSec__SL1.innerText = sls2CheckSec__SL1;
+      domEl__sls2CheckSec__SL2.innerText = sls2CheckSec__SL2;
+      domEl__sls2CheckSec__SL1_calc.innerText = sls2CheckSec__SL1_calc;
+      domEl__sls2CheckSec__SL2_calc.innerText = sls2CheckSec__SL2_calc;
+    };
   </script>
   <!-- <script type="text/javascript">
         // var div = document.getElementById('tab_1'); 
