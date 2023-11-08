@@ -87,7 +87,7 @@ cpyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(
     `${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${TP.value} ${
       SLu_1Val + SLu_2Val
-    }U ${mR(result_newEntryVal)}`
+    }U ${mR(result_newEntryVal)} - ${mRs(Vol_1Val, 3)} / ${mRs(Vol_2Val, 3)}`
   );
 });
 
@@ -293,5 +293,5 @@ function checkLorS() {
     })
   );
 
-  console.log(JSON.parse(sessionStorage.getItem("isLong")));
+  // console.log(JSON.parse(sessionStorage.getItem("isLong")));
 }

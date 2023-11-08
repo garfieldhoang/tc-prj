@@ -74,6 +74,7 @@
   <body>
     <!-- <iframe id="tab_1" src="./othersS/newDCAGuide/index.html" height="">></iframe> -->
 
+    <!-- src="./othersS/newDCAGuide/index.html" -->
     <!-- src="./othersS/DCA_3x" -->
 
     <iframe
@@ -206,7 +207,7 @@
         sls2CheckSec__SL2_calc,
         sls2CheckSec__SL3,
         sls2CheckSec__SL3_calc,
-      } = JSON.parse(sessionStorage.getItem("isLong"));
+      } = JSON.parse(sessionStorage.getItem("isLong")) || 0;
 
       const currX = sessionStorage.getItem("currX");
 
@@ -223,12 +224,10 @@
         `#sls2CheckSec__${currX}x .sls2CheckSec__SL2_calc`
       );
 
-      domEl__sls2CheckSec__SL1.innerText = sls2CheckSec__SL1;
-      domEl__sls2CheckSec__SL2.innerText = sls2CheckSec__SL2;
-      domEl__sls2CheckSec__SL1_calc.innerText = sls2CheckSec__SL1_calc;
-      domEl__sls2CheckSec__SL2_calc.innerText = sls2CheckSec__SL2_calc;
-
-      console.log(currX, typeof currX);
+      domEl__sls2CheckSec__SL1.innerText = sls2CheckSec__SL1 || "xx";
+      domEl__sls2CheckSec__SL2.innerText = sls2CheckSec__SL2 || "xx";
+      domEl__sls2CheckSec__SL1_calc.innerText = sls2CheckSec__SL1_calc || "xx";
+      domEl__sls2CheckSec__SL2_calc.innerText = sls2CheckSec__SL2_calc || "xx";
 
       if (currX === "3") {
         var domEl__sls2CheckSec__SL3 = document.querySelector(
@@ -238,8 +237,9 @@
           `#sls2CheckSec__${currX}x .sls2CheckSec__SL3_calc`
         );
 
-        domEl__sls2CheckSec__SL3.innerText = sls2CheckSec__SL3;
-        domEl__sls2CheckSec__SL3_calc.innerText = sls2CheckSec__SL3_calc;
+        domEl__sls2CheckSec__SL3.innerText = sls2CheckSec__SL3 || "xx";
+        domEl__sls2CheckSec__SL3_calc.innerText =
+          sls2CheckSec__SL3_calc || "xx";
       }
     };
   </script>

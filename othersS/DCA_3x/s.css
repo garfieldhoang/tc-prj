@@ -247,6 +247,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  user-select: none;
 }
 
 .fxBtnsCont_btn:hover {
@@ -267,12 +269,14 @@ input {
   background-color: #88e5ef;
 }
 
+#result_newEntry2,
 #result_newEntry,
 #Vol_1,
 #Vol_2 {
   cursor: pointer;
 }
 
+#result_newEntry2:active,
 #result_newEntry:active {
   font-size: 20px;
 }
@@ -328,10 +332,12 @@ input {
   }
 }
 
+#result_newEntryCont2,
 #result_newEntryCont {
   position: relative;
 }
 
+#cpyBtnRealNEntry2,
 #cpyBtnRealNEntry {
   content: "";
   position: absolute;
@@ -347,6 +353,7 @@ input {
   cursor: pointer;
 }
 
+#cpyBtnRealNEntry2:active,
 #cpyBtnRealNEntry:active {
   scale: 80%;
   /* background-color: ; */

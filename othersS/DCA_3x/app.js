@@ -50,7 +50,9 @@ var Entry_3 = document.getElementById("Entry_3");
 var SL = document.getElementById("SL");
 var TP = document.getElementById("TP");
 var result_rate0_1 = document.getElementById("result_rate0_1");
+var result_rate0_1_2 = document.getElementById("result_rate0_1_2");
 var result_newEntry = document.getElementById("result_newEntry");
+var result_newEntry2 = document.getElementById("result_newEntry2");
 var rrNew = document.getElementById("rrNew");
 
 var Entry_1Val,
@@ -58,7 +60,9 @@ var Entry_1Val,
   Entry_3Val,
   SLVal,
   result_newEntryVal,
-  result_rate0_1Val;
+  result_newEntryVal2,
+  result_rate0_1Val,
+  result_rate0_1_2Val;
 
 var btns = document.querySelectorAll(".btn");
 var btnsClass = document.querySelectorAll(".btns");
@@ -70,6 +74,7 @@ var cpyBtn = document.querySelector(".fxBtnsCont_btn_2");
 var cpyBtn_inputBox3class = document.querySelectorAll(".cpyBtn_inputBox3class");
 
 var cpyBtnRealNEntry = document.querySelector("#cpyBtnRealNEntry");
+var cpyBtnRealNEntry2 = document.querySelector("#cpyBtnRealNEntry2");
 
 // Default Values
 LEV.value = LEVVal = 20;
@@ -92,15 +97,22 @@ result_newEntry.addEventListener("click", () =>
   navigator.clipboard.writeText(mR(result_newEntryVal))
 );
 
+result_newEntry2.addEventListener("click", () =>
+  navigator.clipboard.writeText(mR(result_newEntryVal2))
+);
+
 reCalcBtn.addEventListener("click", () => {
   reCalc();
 });
 
 cpyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(
-    `${Entry_1Val} / ${Entry_2Val} - ${SLVal} / ${TP.value} ${
-      SLu_1Val + SLu_2Val
-    }U ${mR(result_newEntryVal)}`
+    `${Entry_1Val} / ${Entry_2Val} / ${Entry_3Val} - ${SLVal} / ${TP.value} ${
+      SLu_1Val + SLu_2Val + SLu_3Val
+    }U ${mRs(result_newEntryVal, 3)} / ${mRs(result_newEntryVal2, 3)} - ${mRs(
+      Vol_1Val,
+      3
+    )} / ${mRs(Vol_2Val, 3)} / ${mRs(Vol_3Val, 3)}`
   );
 });
 
@@ -122,6 +134,10 @@ cpyBtn_inputBox3class[4].addEventListener("click", () =>
 
 cpyBtnRealNEntry.addEventListener("click", () =>
   navigator.clipboard.writeText(mR5(result_newEntryVal))
+);
+
+cpyBtnRealNEntry2.addEventListener("click", () =>
+  navigator.clipboard.writeText(mR5(result_newEntryVal2))
 );
 
 // main
@@ -275,19 +291,33 @@ const reCalc = () => {
   )}`;
   result_sumVol.innerText = `${mR(Vol_1Val + Vol_2Val + Vol_3Val)}`;
 
-  // NEED TO FIX HERE TO GET VAL3
-  // 2+(1-2)/(1+(v2/v1))
+  ///// NEED TO FIX HERE TO GET VAL3
+  /// 2+(1-2)/(1+(v2/v1))
+  /// Dis for 2 entry
+  // ori: result_newEntryVal = Entry_2Val + (Entry_1Val - Entry_2Val) / (1 + Vol_2Val / Vol_1Val);
+  let entry1And2 =
+    Entry_2Val + (Entry_1Val - Entry_2Val) / (1 + Vol_2Val / Vol_1Val);
+  let sumVol1and2 = Vol_1Val + Vol_2Val;
+
   result_newEntryVal =
     Entry_2Val + (Entry_1Val - Entry_2Val) / (1 + Vol_2Val / Vol_1Val);
   result_newEntry.innerText = `${mR(result_newEntryVal)}`;
 
+  result_newEntryVal2 =
+    Entry_3Val + (entry1And2 - Entry_3Val) / (1 + Vol_3Val / sumVol1and2);
+  result_newEntry2.innerText = `${mR(result_newEntryVal2)}`;
+
+  /// ori: result_rate0_1Val = 0 + 1 / (1 + Vol_2Val / Vol_1Val);
   result_rate0_1Val = 0 + 1 / (1 + Vol_2Val / Vol_1Val);
   result_rate0_1.innerText = `${mR(result_rate0_1Val)}`;
 
-  rrNewVal =
-    Math.abs(TP.value - result_newEntryVal) /
-    Math.abs(result_newEntryVal - SLVal);
-  rrNew.innerText = `${mR2(rrNewVal)}`;
+  result_rate0_1_2Val = 0 + 1 / (1 + Vol_3Val / sumVol1and2);
+  result_rate0_1_2.innerText = `${mR(result_rate0_1_2Val)}`;
+
+  // rrNewVal =
+  //   Math.abs(TP.value - result_newEntryVal) /
+  //   Math.abs(result_newEntryVal - SLVal);
+  // rrNew.innerText = `${mR2(rrNewVal)}`;
 
   checkLorS();
 };
@@ -329,5 +359,5 @@ function checkLorS() {
     })
   );
 
-  console.log(JSON.parse(sessionStorage.getItem("isLong")));
+  // console.log(JSON.parse(sessionStorage.getItem("isLong")));
 }
