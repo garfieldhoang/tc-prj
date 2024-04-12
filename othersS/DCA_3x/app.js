@@ -112,7 +112,10 @@ cpyBtn.addEventListener("click", () => {
     }U ${mRs(result_newEntryVal, 3)} / ${mRs(result_newEntryVal2, 3)} - ${mRs(
       Vol_1Val,
       3
-    )} / ${mRs(Vol_2Val, 3)} / ${mRs(Vol_3Val, 3)}`
+    )} / ${mRs(Vol_2Val, 3)} / ${mRs(
+      Vol_3Val,
+      3
+    )} - ${SLu_1Val} / ${SLu_2Val} / ${SLu_3Val}`
   );
 });
 
