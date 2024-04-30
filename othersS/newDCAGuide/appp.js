@@ -58,6 +58,21 @@ var cpyBtn_inputBox3class = document.querySelectorAll(".cpyBtn_inputBox3class");
 
 var cpyBtnRealNEntry = document.querySelector("#cpyBtnRealNEntry");
 
+var dotToComma = document.querySelectorAll(".dotToComma");
+var noteInput = document.querySelector(".noteInput");
+
+/// dotToCommas
+
+dotToComma[0].addEventListener("click", () => {
+  noteInput.value = noteInput.value.replaceAll(".", ",");
+});
+
+dotToComma[1].addEventListener("click", () => {
+  noteInput.value = noteInput.value.replaceAll(",", ".");
+});
+
+/// End dotToCommas
+
 // Default Values
 LEV.value = LEVVal = 20;
 
