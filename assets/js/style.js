@@ -12,6 +12,7 @@ var slVal, sluVal, levXinputVal, fResBigVal, part;
 
 var footer_entry = document.getElementById("footer_entry");
 var footer_sl = document.getElementById("footer_sl");
+var footer_tp = document.getElementById("footer_tp");
 
 var footer_entryVal, footer_slVal;
 
@@ -32,6 +33,7 @@ var toMoon = document.getElementById("toMoon");
 toMoon.addEventListener("click", () => {
   footer_entry.value = footer_entry.value.replaceAll(".", ",");
   footer_sl.value = footer_sl.value.replaceAll(".", ",");
+  footer_tp.value = footer_tp.value.replaceAll(".", ",");
   fResBig.innerHTML = fResBig.innerHTML.replaceAll(".", ",");
 });
 
@@ -163,6 +165,7 @@ var bnt_esl = document.querySelector(".btn-esl");
 bnt_esl.addEventListener("click", function () {
   addDpNone(footer_entry);
   addDpNone(footer_sl);
+  addDpNone(footer_tp);
 });
 
 logo.addEventListener("click", function () {
