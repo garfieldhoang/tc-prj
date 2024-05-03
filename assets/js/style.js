@@ -26,6 +26,15 @@ var btn_uad_04 = document.getElementById("btn_uad_04");
 var btn_uad_05 = document.getElementById("btn_uad_05");
 var btn_uad_06 = document.getElementById("btn_uad_06");
 
+var toMoon = document.getElementById("toMoon");
+
+// toMoon
+toMoon.addEventListener("click", () => {
+  footer_entry.value = footer_entry.value.replaceAll(".", ",");
+  footer_sl.value = footer_sl.value.replaceAll(".", ",");
+  fResBig.innerHTML = fResBig.innerHTML.replaceAll(".", ",");
+});
+
 // btns
 btn_uad_01.addEventListener("click", () => btnReCalc(1, "slu"));
 btn_uad_02.addEventListener("click", () => btnReCalc(5, "slu"));

@@ -1,86 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/img/hmm.png" type="image/x-icon" />
     <title>TC PRJ</title>
-</head>
-<link rel="stylesheet" href="./assets/css/style.css">
-<body>
-<!-- <div class="logo"> -->
-    <img class="logo" src="./assets/img/hmm.png">
-<!-- </div> -->
+  </head>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <body>
+    <!-- <div class="logo"> -->
+    <img class="logo" src="./assets/img/hmm.png" />
+    <!-- </div> -->
 
-<div class="mainC float-left">        
-    <div class="left-col col">
+    <div class="mainC float-left">
+      <div class="left-col col">
         <div class="input-box input-box__sl">
-            <span class="details">SL %</span>
-            <!-- <br> -->
-            <input type="text" placeholder="SL % here">
-        </div>    
+          <span class="details">SL %</span>
+          <!-- <br> -->
+          <input type="text" placeholder="SL % here" />
+        </div>
 
         <div class="input-box input-box__u">
-            <span class="details">SL U</span>
-            <!-- <br> -->
-            <input type="text" placeholder="SL U here">
-        </div>    
+          <span class="details">SL U</span>
+          <!-- <br> -->
+          <input type="text" placeholder="SL U here" />
+        </div>
 
         <div class="input-box input-box__lev">
-            <span class="details">Lev x</span>
-            <!-- <br> -->
-            <input type="text" placeholder="Lev X here">
+          <span class="details">Lev x</span>
+          <!-- <br> -->
+          <input type="text" placeholder="Lev X here" />
         </div>
-    </div>
-    <div class="right-col col">
+      </div>
+      <div class="right-col col">
         <div class="res">
-        <p style="text-align: center;">AMOUNT:</p>
-        <p><span id="js-res"></span>U</p>
-        <p><span id="js-res--big"></span>U</p>
+          <p style="text-align: center">AMOUNT:</p>
+          <p><span id="js-res"></span>U</p>
+          <p><span id="js-res--big"></span>U</p>
 
-        <!-- <div class="btn-copy" onclick="btnCopy()"> -->
-        <div class="btn-esl">
-            ESL
+          <!-- <div class="btn-copy" onclick="btnCopy()"> -->
+          <div class="btn-esl">ESL</div>
         </div>
+      </div>
+
+      <div class="slidecontainer">
+        <span class="details">Lev: <span id="levVal"></span>x </span>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="myRange"
+        />
+      </div>
     </div>
+
+    <div class="btns_upAndDown_area dp_none">
+      <div id="btn_uad_01" class="btn_uad"></div>
+      <div id="btn_uad_02" class="btn_uad"></div>
+      <div id="btn_uad_03" class="btn_uad"></div>
     </div>
-        
-    <div class="slidecontainer">
-        <span class="details">Lev: 
-            <span id="levVal"></span>x
-        </span>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <div class="btns_upAndDown_area dp_none">
+      <div id="btn_uad_04" class="btn_uad rotate_180"></div>
+      <div id="btn_uad_05" class="btn_uad rotate_180"></div>
+      <div id="btn_uad_06" class="btn_uad rotate_180"></div>
     </div>
-</div>
 
-<div class="btns_upAndDown_area dp_none">
-    <div id="btn_uad_01" class="btn_uad"></div>
-    <div id="btn_uad_02" class="btn_uad"></div>
-    <div id="btn_uad_03" class="btn_uad"></div>
-</div>
-<div class="btns_upAndDown_area dp_none">
-    <div id="btn_uad_04" class="btn_uad rotate_180"></div>
-    <div id="btn_uad_05" class="btn_uad rotate_180"></div>
-    <div id="btn_uad_06" class="btn_uad rotate_180"></div>
-</div>
-
-<div class="entrySLArea float-left">
-    <input  class="dp_none" id="footer_entry" type="" name="" placeholder="Entry">
-    <input  class="dp_none" id="footer_sl" type="" name="" placeholder="SL...">
-</div>
-<div id="href" class="float-left">
-
-    
-    <br>
-    <br>
-    <br>
-    <!-- <a href="./moon.html" class="changeSBotic" id="toMoon"></a> -->
-    <a href="./othersS/newDCAGuide/index.html" class="changeSBotic float-left" id="toMoon"></a>
-    <br>
-    <a href="./othersS/currency/index.html" class="changeSBotic float-left" id="toCur"></a>
-</div>
-
-</body>
-<script src="./assets/js/style.js"></script>
+    <div class="entrySLArea float-left">
+      <input
+        class="dp_none"
+        id="footer_entry"
+        type=""
+        name=""
+        placeholder="Entry"
+      />
+      <input
+        class="dp_none"
+        id="footer_sl"
+        type=""
+        name=""
+        placeholder="SL..."
+      />
+    </div>
+    <div id="href" class="float-left">
+      <br />
+      <br />
+      <br />
+      <!-- <a href="./moon.html" class="changeSBotic" id="toMoon"></a> -->
+      <div class="changeSBotic float-left" id="toMoon"></div>
+      <!-- <a href="./othersS/newDCAGuide/index.html" class="changeSBotic float-left" id="toMoon"></a> -->
+      <br />
+      <a
+        href="./othersS/currency/index.html"
+        class="changeSBotic float-left"
+        id="toCur"
+      ></a>
+    </div>
+  </body>
+  <script src="./assets/js/style.js"></script>
 </html>
