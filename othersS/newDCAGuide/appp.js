@@ -251,6 +251,13 @@ beMain(Entry_2, "Entry_2Val");
 beMain(SL, "SLVal");
 
 const reCalc = () => {
+  Entry_1Val = Entry_1.value;
+  SLVal = SL.value;
+  // TP.value = TP.value;
+
+  SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+  SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+
   result_R.innerText = `${mR(SLP_1Val / SLP_2Val)}`;
   result_RS.innerText = `${mR((SLP_1Val / SLP_2Val) * (SLu_2Val / SLu_1Val))}`;
 
