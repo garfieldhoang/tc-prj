@@ -71,6 +71,46 @@ dotToComma[1].addEventListener("click", () => {
   noteInput.value = noteInput.value.replaceAll(",", ".");
 });
 
+dotToComma[2].addEventListener("click", () => {
+  setTimeout(async () => {
+    let b = await navigator.clipboard.readText();
+    b = await JSON.parse(b);
+    await console.log(b);
+    await pasteVal(b[0], b[2], b[1]);
+    await reCalc();
+  }, 1);
+
+  function pasteVal(a, b, c) {
+    Entry_1.value = a;
+    SL.value = b;
+    TP.value = c;
+
+    //   footer_entry.value = a;
+    //   footer_sl.value = b;
+    //   footer_tp.value = c;
+  }
+});
+
+dotToComma[3].addEventListener("click", () => {
+  setTimeout(async () => {
+    let b = await navigator.clipboard.readText();
+    b = await JSON.parse(b);
+    await console.log(b);
+    await pasteVal(b[0], b[2], b[1]);
+    await reCalc();
+  }, 1);
+
+  function pasteVal(a, b, c) {
+    Entry_2.value = a;
+    SL.value = b;
+    TP.value = c;
+
+    //   footer_entry.value = a;
+    //   footer_sl.value = b;
+    //   footer_tp.value = c;
+  }
+});
+
 /// End dotToCommas
 
 // Default Values
@@ -252,6 +292,7 @@ beMain(SL, "SLVal");
 
 const reCalc = () => {
   Entry_1Val = Entry_1.value;
+  Entry_2Val = Entry_2.value;
   SLVal = SL.value;
   // TP.value = TP.value;
 
