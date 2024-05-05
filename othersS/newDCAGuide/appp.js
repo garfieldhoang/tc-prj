@@ -112,16 +112,12 @@ dotToComma[4].addEventListener("click", () => {
 });
 
 dotToComma[3].addEventListener("click", () => {
-  console.log("hh");
   // Entry_1Val =
-  Entry_1.value = "";
   // Entry_2Val =
-  Entry_2.value = "";
   // SLVal =
-  SL.value = "";
   // TP.value =
-  TP.value = "";
-  noteInput.value = "";
+
+  Entry_1.value = Entry_2.value = SL.value = TP.value = noteInput.value = "";
   reCalc();
 });
 
