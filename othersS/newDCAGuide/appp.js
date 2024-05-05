@@ -63,15 +63,15 @@ var noteInput = document.querySelector(".noteInput");
 
 /// dotToCommas
 
-dotToComma[0].addEventListener("click", () => {
+dotToComma[3].addEventListener("click", () => {
   noteInput.value = noteInput.value.replaceAll(".", ",");
 });
 
-dotToComma[1].addEventListener("click", () => {
+dotToComma[4].addEventListener("click", () => {
   noteInput.value = noteInput.value.replaceAll(",", ".");
 });
 
-dotToComma[2].addEventListener("click", () => {
+dotToComma[0].addEventListener("click", () => {
   setTimeout(async () => {
     let b = await navigator.clipboard.readText();
     b = await JSON.parse(b);
@@ -91,7 +91,7 @@ dotToComma[2].addEventListener("click", () => {
   }
 });
 
-dotToComma[4].addEventListener("click", () => {
+dotToComma[2].addEventListener("click", () => {
   setTimeout(async () => {
     let b = await navigator.clipboard.readText();
     b = await JSON.parse(b);
@@ -111,7 +111,7 @@ dotToComma[4].addEventListener("click", () => {
   }
 });
 
-dotToComma[3].addEventListener("click", () => {
+dotToComma[1].addEventListener("click", () => {
   // Entry_1Val =
   // Entry_2Val =
   // SLVal =
@@ -124,7 +124,7 @@ dotToComma[3].addEventListener("click", () => {
 /// End dotToCommas
 
 // Default Values
-LEV.value = LEVVal = 20;
+LEV.value = LEVVal = 50;
 
 /// ###############
 /// # FUNCTIONS ///
@@ -267,16 +267,20 @@ function main(x) {
   // result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
   // result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
 
-  reCalc();
+  if (x === "SLP_1Val" || x === "SLP_2Val") {
+    reCalc(1);
+  } else {
+    reCalc();
 
-  // cl(percentCalc(Entry_1Val, SLVal))
-  if (x === "Entry_1Val") {
-    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
-  } else if (x === "Entry_2Val") {
-    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
-  } else if (x === "SLVal") {
-    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
-    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    // cl(percentCalc(Entry_1Val, SLVal))
+    if (x === "Entry_1Val") {
+      SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+    } else if (x === "Entry_2Val") {
+      SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    } else if (x === "SLVal") {
+      SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+      SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    }
   }
 }
 
@@ -300,14 +304,16 @@ beMain(Entry_1, "Entry_1Val");
 beMain(Entry_2, "Entry_2Val");
 beMain(SL, "SLVal");
 
-const reCalc = () => {
-  Entry_1Val = +Entry_1.value;
-  Entry_2Val = +Entry_2.value;
-  SLVal = +SL.value;
-  // TP.value = TP.value;
+const reCalc = (x) => {
+  if (!x) {
+    Entry_1Val = +Entry_1.value;
+    Entry_2Val = +Entry_2.value;
+    SLVal = +SL.value;
+    // TP.value = TP.value;
 
-  SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
-  SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+  }
 
   result_R.innerText = `${mR(SLP_1Val / SLP_2Val)}`;
   result_RS.innerText = `${mR((SLP_1Val / SLP_2Val) * (SLu_2Val / SLu_1Val))}`;
