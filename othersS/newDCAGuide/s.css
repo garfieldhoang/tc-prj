@@ -359,6 +359,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .dotToComma {
@@ -381,4 +382,10 @@ input {
 
 .dotToComma:hover {
   opacity: 1;
+}
+
+.dotToComma_clearAll {
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(56, 150, 30);
 }

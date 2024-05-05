@@ -91,7 +91,7 @@ dotToComma[2].addEventListener("click", () => {
   }
 });
 
-dotToComma[3].addEventListener("click", () => {
+dotToComma[4].addEventListener("click", () => {
   setTimeout(async () => {
     let b = await navigator.clipboard.readText();
     b = await JSON.parse(b);
@@ -109,6 +109,20 @@ dotToComma[3].addEventListener("click", () => {
     //   footer_sl.value = b;
     //   footer_tp.value = c;
   }
+});
+
+dotToComma[3].addEventListener("click", () => {
+  console.log("hh");
+  // Entry_1Val =
+  Entry_1.value = "";
+  // Entry_2Val =
+  Entry_2.value = "";
+  // SLVal =
+  SL.value = "";
+  // TP.value =
+  TP.value = "";
+  noteInput.value = "";
+  reCalc();
 });
 
 /// End dotToCommas
@@ -291,9 +305,9 @@ beMain(Entry_2, "Entry_2Val");
 beMain(SL, "SLVal");
 
 const reCalc = () => {
-  Entry_1Val = Entry_1.value;
-  Entry_2Val = Entry_2.value;
-  SLVal = SL.value;
+  Entry_1Val = +Entry_1.value;
+  Entry_2Val = +Entry_2.value;
+  SLVal = +SL.value;
   // TP.value = TP.value;
 
   SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
