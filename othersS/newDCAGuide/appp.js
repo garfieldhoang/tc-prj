@@ -267,7 +267,10 @@ function main(x) {
   // result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
   // result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
 
-  if (x === "SLP_1Val" || x === "SLP_2Val") {
+  const checkVar = ["SLP_1Val", "SLP_2Val", "SLu_1Val", "SLu_2Val"];
+
+  // if (x === "SLP_1Val" || x === "SLP_2Val") {
+  if (checkVar.includes(x)) {
     reCalc(1);
   } else {
     reCalc();
