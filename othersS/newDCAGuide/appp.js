@@ -71,7 +71,7 @@ dotToComma[4].addEventListener("click", () => {
   noteInput.value = noteInput.value.replaceAll(",", ".");
 });
 
-dotToComma[0].addEventListener("click", () => {
+dotToComma[1].addEventListener("click", () => {
   setTimeout(async () => {
     let b = await navigator.clipboard.readText();
     b = await JSON.parse(b);
@@ -111,7 +111,7 @@ dotToComma[2].addEventListener("click", () => {
   }
 });
 
-dotToComma[1].addEventListener("click", () => {
+dotToComma[0].addEventListener("click", () => {
   // Entry_1Val =
   // Entry_2Val =
   // SLVal =
