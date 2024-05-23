@@ -76,12 +76,103 @@ var cpyBtn_inputBox3class = document.querySelectorAll(".cpyBtn_inputBox3class");
 var cpyBtnRealNEntry = document.querySelector("#cpyBtnRealNEntry");
 var cpyBtnRealNEntry2 = document.querySelector("#cpyBtnRealNEntry2");
 
+var dotToComma = document.querySelectorAll(".dotToComma");
+var noteInput = document.querySelector(".noteInput");
+
 // Default Values
-LEV.value = LEVVal = 20;
+LEV.value = LEVVal = 50;
 
 /// ###############
 /// # FUNCTIONS ///
 ///
+
+/// dotToCommas
+
+dotToComma[4].addEventListener("click", () => {
+  noteInput.value = noteInput.value.replaceAll(".", ",");
+});
+
+dotToComma[5].addEventListener("click", () => {
+  noteInput.value = noteInput.value.replaceAll(",", ".");
+});
+
+dotToComma[1].addEventListener("click", () => {
+  setTimeout(async () => {
+    let b = await navigator.clipboard.readText();
+    b = await JSON.parse(b);
+    await console.log(b);
+    await pasteVal(b[0], b[2], b[1]);
+    await reCalc();
+  }, 1);
+
+  function pasteVal(a, b, c) {
+    Entry_1.value = a;
+    SL.value = b;
+    TP.value = c;
+
+    //   footer_entry.value = a;
+    //   footer_sl.value = b;
+    //   footer_tp.value = c;
+  }
+});
+
+dotToComma[2].addEventListener("click", () => {
+  setTimeout(async () => {
+    let b = await navigator.clipboard.readText();
+    b = await JSON.parse(b);
+    await console.log(b);
+    await pasteVal(b[0], b[2], b[1]);
+    await reCalc();
+  }, 1);
+
+  function pasteVal(a, b, c) {
+    Entry_2.value = a;
+    SL.value = b;
+    TP.value = c;
+
+    //   footer_entry.value = a;
+    //   footer_sl.value = b;
+    //   footer_tp.value = c;
+  }
+});
+
+dotToComma[3].addEventListener("click", () => {
+  setTimeout(async () => {
+    let b = await navigator.clipboard.readText();
+    b = await JSON.parse(b);
+    await console.log(b);
+    await pasteVal(b[0], b[2], b[1]);
+    await reCalc();
+  }, 1);
+
+  function pasteVal(a, b, c) {
+    Entry_3.value = a;
+    SL.value = b;
+    TP.value = c;
+
+    //   footer_entry.value = a;
+    //   footer_sl.value = b;
+    //   footer_tp.value = c;
+  }
+});
+
+dotToComma[0].addEventListener("click", () => {
+  // Entry_1Val =
+  // Entry_2Val =
+  // SLVal =
+  // TP.value =
+
+  Entry_1.value =
+    Entry_2.value =
+    Entry_3.value =
+    SL.value =
+    TP.value =
+    noteInput.value =
+      "";
+  reCalc();
+});
+
+/// End dotToCommas
 
 /// ## btns ## ///
 
@@ -234,20 +325,34 @@ function main(x) {
   // result_rate0_1Val = 0 + 1/(1+(Vol_2Val/Vol_1Val))
   // result_rate0_1.innerText = `${mR(result_rate0_1Val)}`
 
-  reCalc();
+  const checkVar = ["SLP_1Val", "SLP_2Val", "SLP_3Val", "SLu_1Val", "SLu_2Val"];
 
-  // cl(percentCalc(Entry_1Val, SLVal))
-  if (x === "Entry_1Val") {
-    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
-  } else if (x === "Entry_2Val") {
-    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
-  } else if (x === "Entry_3Val") {
-    SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
-  } else if (x === "SLVal") {
-    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
-    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
-    SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
+  // if (x === "SLP_1Val" || x === "SLP_2Val") {
+  if (checkVar.includes(x)) {
+    reCalc(1);
+  } else {
+    reCalc();
+
+    // cl(percentCalc(Entry_1Val, SLVal))
+    if (x === "Entry_1Val") {
+      SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+    } else if (x === "Entry_2Val") {
+      SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    } else if (x === "Entry_3Val") {
+      SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
+    } else if (x === "SLVal") {
+      SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+      SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+      SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
+    }
   }
+}
+
+function beMain(x, y) {
+  x.oninput = function () {
+    eval(`${y} = Number(this.value)`);
+    main(y);
+  };
 }
 
 function beMain(x, y) {
@@ -273,7 +378,19 @@ beMain(Entry_2, "Entry_2Val");
 beMain(Entry_3, "Entry_3Val");
 beMain(SL, "SLVal");
 
-const reCalc = () => {
+const reCalc = (x) => {
+  if (!x) {
+    Entry_1Val = +Entry_1.value;
+    Entry_2Val = +Entry_2.value;
+    Entry_3Val = +Entry_3.value;
+    SLVal = +SL.value;
+    // TP.value = TP.value;
+
+    SLP_1Val = SLP_1.value = mRs(percentCalc(Entry_1Val, SLVal), 2);
+    SLP_2Val = SLP_2.value = mRs(percentCalc(Entry_2Val, SLVal), 2);
+    SLP_3Val = SLP_3.value = mRs(percentCalc(Entry_3Val, SLVal), 2);
+  }
+
   result_R.innerText = `${mR(SLP_1Val / SLP_2Val)}`;
   result_RS.innerText = `${mR((SLP_1Val / SLP_2Val) * (SLu_2Val / SLu_1Val))}`;
 

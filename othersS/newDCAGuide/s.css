@@ -378,14 +378,20 @@ input {
 
   font-size: 30px;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .dotToComma:hover {
   opacity: 1;
+  scale: 110%;
 }
 
 .dotToComma_clearAll {
   height: 40px;
   font-size: 20px;
   background-color: rgb(56, 150, 30);
+}
+
+.dotToComma_blue {
+  background-color: rgb(38, 197, 189);
 }
